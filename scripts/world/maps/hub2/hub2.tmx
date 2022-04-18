@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="23" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="18">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="godhome"/>
+ </properties>
+ <tileset firstgid="1" source="../../tilesets/godhome.tsx"/>
+ <tileset firstgid="225" source="../../tilesets/decoration.tsx"/>
+ <layer id="1" name="tiles" width="23" height="12">
+  <data encoding="csv">
+73,103,73,73,73,73,73,73,73,73,73,73,73,73,73,103,18,18,17,32,100,73,73,
+73,103,73,73,73,73,73,73,73,73,73,73,73,73,73,103,32,31,18,31,100,73,73,
+73,103,73,73,8,9,10,11,73,73,73,6,7,73,73,103,31,17,32,31,100,73,73,
+73,103,73,73,22,23,24,25,73,73,73,20,21,73,73,103,31,32,17,17,100,73,73,
+73,103,73,73,36,37,38,39,73,73,73,34,35,73,73,117,18,18,31,18,100,73,73,
+73,103,99,85,99,79,80,127,99,85,127,77,78,99,99,131,18,230,231,18,100,73,73,
+73,103,230,231,31,32,32,18,31,236,17,18,31,17,18,18,17,237,238,31,100,73,73,
+73,103,237,238,18,31,32,235,18,18,18,18,17,17,229,31,32,32,18,18,100,73,73,
+73,83,50,51,51,50,51,50,51,50,50,51,51,50,51,51,50,51,50,50,97,73,73,
+73,110,64,65,65,64,65,64,65,64,64,65,65,64,65,65,64,65,64,64,111,73,73,
+73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,
+73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73,73
+</data>
+ </layer>
+ <objectgroup id="2" name="collision">
+  <object id="1" x="600" y="0" width="40" height="200"/>
+  <object id="2" x="520" y="120" width="80" height="80"/>
+  <object id="3" x="280" y="120" width="160" height="80"/>
+  <object id="4" x="80" y="120" width="120" height="80"/>
+  <object id="5" x="40" y="200" width="40" height="160"/>
+  <object id="7" x="80" y="360" width="720" height="40"/>
+  <object id="8" x="800" y="0" width="40" height="360"/>
+ </objectgroup>
+ <objectgroup id="3" name="markers">
+  <object id="9" name="fromhub" x="720" y="80">
+   <point/>
+  </object>
+  <object id="12" name="fromhall" x="480" y="240">
+   <point/>
+  </object>
+  <object id="13" name="fromlifeblood" x="240" y="240">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="objects">
+  <object id="10" name="transition" x="640" y="-40" width="160" height="40">
+   <properties>
+    <property name="map" value="hub"/>
+    <property name="marker" value="fromhub2"/>
+   </properties>
+  </object>
+  <object id="11" name="transition" x="440" y="140" width="80" height="40">
+   <properties>
+    <property name="facing" value="right"/>
+    <property name="map" value="hallofgods"/>
+    <property name="marker" value="entrance"/>
+   </properties>
+  </object>
+  <object id="14" name="transition" x="200" y="140" width="80" height="40">
+   <properties>
+    <property name="facing" value="right"/>
+    <property name="map" value="lifeblood"/>
+   </properties>
+  </object>
+  <object id="16" name="lifeblooddoor" x="160" y="80" width="160" height="120">
+   <properties>
+    <property name="flagcheck" value="!lifeblood_door_open"/>
+   </properties>
+  </object>
+  <object id="17" name="script" x="280" y="200" width="40" height="160">
+   <properties>
+    <property name="scene" value="doorcheck.lifeblood"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer id="5" name="tilesfg" width="23" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,13,14,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,42,28,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>

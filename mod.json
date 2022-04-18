@@ -1,0 +1,11 @@
+{
+  "name": "Godhome",
+  "subtitle": "Challenge the gods of Hallownest",
+  "party": ["knight"],
+  "inventory": {
+    "armors": ["armors/unn", "armors/steadybody", "armors/compass"]
+  },
+  "engineVer": "v0.4.0-dev",
+  
+  "map": "hub"
+}

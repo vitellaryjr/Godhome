@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="8" nextobjectid="11">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../../tilesets/godhome.tsx"/>
+ <layer id="1" name="tiles" width="16" height="12">
+  <data encoding="csv">
+74,74,74,74,74,74,74,74,74,74,74,74,74,73,73,73,
+74,74,74,74,74,74,74,74,74,74,74,74,74,74,73,73,
+74,74,74,74,74,74,74,74,74,74,74,74,74,74,73,73,
+74,74,55,177,174,176,174,175,176,176,174,175,175,69,73,73,
+74,74,103,172,172,158,158,172,158,173,172,158,173,100,73,73,
+74,74,103,173,159,159,172,159,158,173,159,173,172,100,73,73,
+74,74,117,159,173,158,158,173,159,158,172,172,159,100,73,73,
+174,176,163,158,173,158,173,159,158,173,173,158,159,100,73,73,
+165,164,165,165,165,164,165,165,165,164,164,164,164,97,73,73,
+179,178,179,179,179,178,179,179,179,178,178,178,178,111,73,73,
+74,74,74,74,74,74,74,74,74,74,74,74,74,73,73,73,
+74,74,74,74,74,74,74,74,74,74,74,74,74,73,73,73
+</data>
+ </layer>
+ <objectgroup id="3" name="collision">
+  <object id="1" x="0" y="80" width="120" height="200"/>
+  <object id="2" x="120" y="80" width="440" height="40"/>
+  <object id="3" x="520" y="120" width="40" height="240"/>
+  <object id="4" x="0" y="360" width="560" height="40"/>
+ </objectgroup>
+ <objectgroup id="2" name="markers">
+  <object id="5" name="spawn" x="40" y="320">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="objects">
+  <object id="6" name="transition" x="-40" y="280" width="40" height="80">
+   <properties>
+    <property name="map" value="hub2"/>
+    <property name="marker" value="fromlifeblood"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <imagelayer id="6" name="vines">
+  <image source="../../../../assets/sprites/tilesets/lifeblood_room.png" width="640" height="480"/>
+ </imagelayer>
+ <objectgroup id="7" name="objects_orb">
+  <object id="10" name="lifebloodorb" x="280" y="240" width="80" height="80">
+   <properties>
+    <property name="flagcheck" value="!lifeblood_active"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="objects_ps"/>
+</map>
