@@ -6,4 +6,10 @@ this is my first major deltarune mod, and i hope people enjoy playing it! if you
 
 ## Download
 
+#### For Kristal release
+
+go to the [releases page](https://github.com/vitellaryjr/Godhome/releases) and download the latest release
+
+#### For latest Kristal commit
+
 click the green Code dropdown at the top of the page, and select Download .ZIP. take the folder inside this .zip and put it where you put your kristal mods
