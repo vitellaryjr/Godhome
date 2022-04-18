@@ -8,7 +8,7 @@ function Menu:init(pantheon_num)
     self.alpha = 0
     Game.world.timer:tween(0.5, self, {alpha = 1})
 
-    self.box = DarkBox(220, 80, 200, 300)
+    self.box = UIBox(220, 80, 200, 300)
     self.box.layer = -1
     self:addChild(self.box)
 

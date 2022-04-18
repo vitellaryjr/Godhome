@@ -8,7 +8,7 @@ function Menu:init(statue)
     self.alpha = 0
     Game.world.timer:tween(0.5, self, {alpha = 1})
 
-    self.box = DarkBox(160, 100, 320, 200)
+    self.box = UIBox(160, 100, 320, 200)
     self.box.layer = -1
     self:addChild(self.box)
 
