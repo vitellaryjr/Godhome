@@ -66,7 +66,7 @@ function MantisLord:onDefeat(damage, battler)
         end
     else
         super:onDefeat(self, damage, battler)
-        Game.batte.encounter:stopMusic()
+        Game.battle.encounter:stopMusic()
         Game.battle.timer:after(0.7, function()
             local mask = ColorMaskFX({1,1,1}, 0)
             self.chair:addFX(mask)
