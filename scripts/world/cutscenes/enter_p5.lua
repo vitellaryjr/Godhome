@@ -5,7 +5,7 @@ return function(cutscene, door, knight, dir)
     local menu = Game.world:spawnObject(PantheonMenu(5), "ui")
     cutscene:wait(function() return not menu.open end)
     if menu.quit then
-        cutscene:wait(cutscene:panTo(knight, 0.5))
+        -- cutscene:wait(cutscene:panTo(knight, 0.5))
         cutscene:endCutscene()
         return
     end
