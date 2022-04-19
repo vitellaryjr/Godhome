@@ -16,7 +16,7 @@ function Attack:onStart()
             self:spawnBullet("p4/watcherknights/roll", x, y, enemy)
         else
             bounce = true
-            local x, y = love.math.random(arena.left + 40, arena.right - 40), arena.bottom - 33
+            local x, y = love.math.random(arena.left + 40, arena.right - 40), arena.bottom - 26
             self:spawnBullet("p4/watcherknights/bounce", x, y, enemy)
         end
     end

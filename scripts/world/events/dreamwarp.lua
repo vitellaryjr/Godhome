@@ -18,8 +18,7 @@ function Warp:draw()
     love.graphics.setBlendMode(prev_blend)
 end
 
-function Warp:onCollide(knight)
-    self.collidable = false
+function Warp:onEnter(knight)
     Game.world:startCutscene(function(cutscene)
         local wait = cutscene:walkTo(knight, self.center_x, self.center_y, 4, "down")
         cutscene:panTo(self.center_x, self.center_y, 0.5)

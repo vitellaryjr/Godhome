@@ -7,6 +7,8 @@ function Roll:init(x, y, enemy)
     self.wall_collider = CircleCollider(self, 20, 20, 12)
     self.enemy = enemy
 
+    self:setScale(1.6)
+
     self.vulnerable = true
     self.rolling = false
     self.bonks = 0
@@ -66,7 +68,7 @@ function Roll:startAttack()
     local soul = Game.battle.soul
     local angle = Utils.angle(self, soul)
     self.physics = {
-        speed = 6,
+        speed = 5,
         direction = angle + math.pi,
     }
     local spin
@@ -79,7 +81,7 @@ function Roll:startAttack()
     self.sprite:play(0.1, true)
     self.wave.timer:after(0.4, function()
         self.physics = {
-            speed = 12,
+            speed = 10,
             direction = angle,
         }
         self.vulnerable = false

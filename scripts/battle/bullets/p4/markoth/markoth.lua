@@ -16,9 +16,11 @@ end
 function Markoth:onAdd(parent)
     super:onAdd(self, parent)
     local arena = Game.battle.arena
-    self.wave.timer:every(2, function()
-        local x, y = love.math.random(arena.left + 20, arena.right - 20), love.math.random(arena.top + 20, arena.bottom - 20)
-        self.wave.timer:tween(1.5, self, {ox = x, oy = y}, "in-out-sine")
+    self.wave.timer:every(3, function()
+        local rxl, rxr = Utils.clamp(self.ox - 80, arena.left + 20, arena.right - 20), Utils.clamp(self.ox + 80, arena.left + 20, arena.right - 20)
+        local ryl, ryr = Utils.clamp(self.oy - 80, arena.top + 20, arena.bottom - 20), Utils.clamp(self.oy + 80, arena.top + 20, arena.bottom - 20)
+        local x, y = love.math.random(rxl, rxr), love.math.random(ryl, ryr)
+        self.wave.timer:tween(2.5, self, {ox = x, oy = y}, "in-out-back")
     end)
 end
 
@@ -30,8 +32,8 @@ function Markoth:update(dt)
     end
     self.sine = self.sine + dt
     self:setPosition(
-        self.ox + 6*math.sin(self.sine*3),
-        self.oy + 6*math.sin(self.sine*2)
+        self.ox + 4*math.sin(self.sine*3),
+        self.oy + 4*math.sin(self.sine*2)
     )
 end
 

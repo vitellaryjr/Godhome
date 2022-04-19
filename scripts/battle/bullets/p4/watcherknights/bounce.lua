@@ -7,6 +7,8 @@ function Bounce:init(x, y, enemy)
     self.wall_collider = CircleCollider(self, 20, 20, 15)
     self.enemy = enemy
 
+    self:setScale(1.6)
+
     self.vulnerable = true
     self.bouncing = false
 end
@@ -58,12 +60,12 @@ function Bounce:startAttack()
             wait()
         end
         self.physics = {
-            speed_x = Utils.sign(soul.x - self.x)*Utils.random(6,8),
-            speed_y = -13,
-            gravity = 0.7,
+            speed_x = Utils.sign(soul.x - self.x)*Utils.random(4,6),
+            speed_y = -11,
+            gravity = 0.5,
             gravity_direction = math.pi/2,
         }
-        self.y = arena.bottom - 33
+        self.y = arena.bottom - 26
         self.vulnerable = false
         self.color = {1,1,1}
         local mask = ColorMaskFX({1,1,1}, 1)
@@ -97,7 +99,7 @@ function Bounce:startAttack()
             wait()
         end
         self.physics = {}
-        self.y = arena.bottom - 33
+        self.y = arena.bottom - 26
     end)
 end
 

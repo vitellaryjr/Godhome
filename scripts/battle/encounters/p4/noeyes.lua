@@ -28,4 +28,8 @@ function NoEyes:onBattleStart()
     Game.battle:addChild(self.darkness)
 end
 
+function NoEyes:onDeath()
+    self.singing:stop()
+end
+
 return NoEyes

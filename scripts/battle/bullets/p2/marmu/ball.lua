@@ -14,7 +14,7 @@ function Ball:update(dt)
     super:update(self, dt)
     local soul = Game.battle.soul
     if self.charging then
-        self.physics.speed = Utils.approach(self.physics.speed, 8, 0.5*DTMULT)
+        self.physics.speed = Utils.approach(self.physics.speed, 7.5, 0.5*DTMULT)
         self.physics.gravity_direction = Utils.angle(self.x, self.y, soul.x, soul.y)
 
         if soul.x < self.x then
@@ -49,7 +49,7 @@ end
 function Ball:hit(source, damage)
     super:hit(self, source, damage)
     if self.charging then
-        self.physics.speed = 10
+        self.physics.speed = 9
         self.physics.direction = Utils.angle(source, self)
     end
 end

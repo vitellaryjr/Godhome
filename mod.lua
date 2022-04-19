@@ -272,14 +272,16 @@ function Mod:loadHooks()
         orig(battle, dt)
         if battle.encounter.darkness then
             local player = battle:getPartyByID("knight")
-            if not self.light_indexes.player then
-                if player then
+            if player then
+                if not self.light_indexes.player then
                     addLight("player", player.x, player.y - 40, 64)
+                else
+                    local light = getLight("player")
+                    if light then
+                        light.x = player.x
+                        light.y = player.y - 40
+                    end
                 end
-            else
-                local light = getLight("player")
-                light.x = player.x
-                light.y = player.y - 40
             end
             if self.light_indexes.ui then
                 local light = getLight("ui")
@@ -437,6 +439,14 @@ function Mod:loadHooks()
         game.gameover_screenshot = love.graphics.newImage(SCREEN_CANVAS:newImageData())
         if game.battle.encounter.pantheon_music then
             game.battle.encounter:stopMusic()
+        end
+        if game.battle.encounter.onDeath then
+            game.battle.encounter:onDeath()
+        end
+        if game.battle.encounter.darkness then
+            self.light_indexes = {}
+            game.battle.encounter.darkness:remove()
+            game.battle.encounter.darkness = nil
         end
         game.state = "PANTHEON_GAMEOVER"
         if game:getFlag("in_pantheon", false) then
