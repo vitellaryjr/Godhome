@@ -502,6 +502,7 @@ function Mod:loadHooks()
                 local knight = game:getPartyMember("knight")
                 knight.health = knight.stats.health
                 game.exiting_encounter = nil
+                Kristal.saveGame(nil, Game:save("save_spawn"))
                 fade:fadeOutAndRemove(0.05)
             end)
         else

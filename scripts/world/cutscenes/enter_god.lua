@@ -46,9 +46,9 @@ return function(cutscene, statue, knight, dir)
         radiant = 3,
     }
     local clear_tbl = Game:getFlag("hall_clear", {})
-    local clear = clear_tbl[statue:getEncounter(difficulty)]
+    local clear = clear_tbl[statue:getEncounter(difficulty, true)]
     if difficulties[difficulty] > (difficulties[clear] or 0) then
-        clear_tbl[statue:getEncounter(difficulty)] = difficulty
+        clear_tbl[statue:getEncounter(difficulty, true)] = difficulty
         Game:setFlag("hall_clear", clear_tbl)
 
         local gem = statue.alt_active and statue.alt_difficulty_sprite or statue.difficulty_sprite

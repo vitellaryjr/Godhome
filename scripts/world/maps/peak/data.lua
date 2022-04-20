@@ -875,7 +875,9 @@ return {
           height = 40,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["marker"] = "save_spawn"
+          }
         },
         {
           id = 61,

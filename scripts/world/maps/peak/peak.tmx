@@ -253,7 +253,11 @@
   </object>
  </objectgroup>
  <objectgroup id="4" name="objects">
-  <object id="58" name="savepoint" x="640" y="1360" width="40" height="40"/>
+  <object id="58" name="savepoint" x="640" y="1360" width="40" height="40">
+   <properties>
+    <property name="marker" value="save_spawn"/>
+   </properties>
+  </object>
   <object id="61" name="stormentrance" x="320" y="1360" width="40" height="80"/>
  </objectgroup>
  <objectgroup id="17" name="objects_ps"/>

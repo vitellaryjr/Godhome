@@ -13,10 +13,10 @@
   <image source="../../../../assets/sprites/tilesets/bg_a.png" width="640" height="480"/>
  </imagelayer>
  <imagelayer id="4" name="bg2" offsetx="0" offsety="80" parallaxx="0.4" parallaxy="0.4" repeatx="1">
-  <image source="../../../../assets/sprites/tilesets/bg_b.png" width="640" height="480"/>
+  <image source="../../../../assets/sprites/tilesets/bg_b.png" width="640" height="1280"/>
  </imagelayer>
  <imagelayer id="5" name="bg3" offsetx="0" offsety="200" parallaxx="0.6" parallaxy="0.6" repeatx="1">
-  <image source="../../../../assets/sprites/tilesets/bg_c.png" width="640" height="480"/>
+  <image source="../../../../assets/sprites/tilesets/bg_c.png" width="640" height="880"/>
  </imagelayer>
  <layer id="8" name="bgtiles" width="54" height="20">
   <data encoding="csv">
@@ -129,7 +129,11 @@
   </object>
  </objectgroup>
  <objectgroup id="7" name="objects">
-  <object id="6" name="savepoint" x="670" y="360" width="40" height="40"/>
+  <object id="6" name="savepoint" x="670" y="360" width="40" height="40">
+   <properties>
+    <property name="marker" value="save_spawn"/>
+   </properties>
+  </object>
   <object id="24" name="transition" x="1320" y="800" width="160" height="40">
    <properties>
     <property name="map" value="hub2"/>

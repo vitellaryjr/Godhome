@@ -132,11 +132,11 @@ function Statue:toggleAltState(silent)
     end
 end
 
-function Statue:getEncounter(difficulty)
+function Statue:getEncounter(difficulty, return_id)
     if self.alt_active then
         return self.alt_encounter
     else
-        if self.asc_encounter and difficulty ~= "attuned" then
+        if self.asc_encounter and difficulty ~= "attuned" and not return_id then
             return self.asc_encounter
         else
             return self.encounter
