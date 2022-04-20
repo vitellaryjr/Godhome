@@ -1,8 +1,8 @@
 return function(cutscene, statue, knight, dir)
     if dir ~= "up" then return end
-    local wait = cutscene:walkTo(knight, statue.x + statue.width/2, statue.y + 90, 4, "up")
+    cutscene:walkTo(knight, statue.x + statue.width/2, statue.y + 90, 0.1, "up")
     cutscene:panTo(statue.x + statue.width/2, statue.y + 50, 0.1)
-    cutscene:wait(wait)
+    cutscene:wait(0.1)
     local menu
     if not statue.locked then
         menu = Game.world:spawnObject(StatueMenu(statue), "ui")

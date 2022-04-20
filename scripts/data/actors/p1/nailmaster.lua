@@ -31,8 +31,8 @@ function Nailmaster:init()
         ["enter"] = {"enter", 0.1, true},
     }
     self.offsets = {
-        ["down"] = {0,10},
-        ["enter"] = {50,0},
+        ["down"] = {0,-10},
+        ["enter"] = {-50,0},
     }
 end
 

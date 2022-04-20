@@ -35,8 +35,8 @@ function Grimm:init()
         ["scream_end"] = {"bow", 0.1, false, frames = {4,3,2,1}, next = "idle"},
     }
     self.offsets = {
-        ["bow"] = {5,0},
-        ["scream"] = {22,-20},
+        ["bow"] = {-5,0},
+        ["scream"] = {-22,20},
     }
 end
 

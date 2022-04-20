@@ -37,10 +37,10 @@ function Sheo:init()
         ["slam_orange"] = {"slam_orange", 0.1, false},
     }
     self.offsets = {
-        ["raise_cyan"] = {0,30},
-        ["raise_orange"] = {0,30},
-        ["slam_cyan"] = {48,10},
-        ["slam_orange"] = {48,10},
+        ["raise_cyan"] = {0,-30},
+        ["raise_orange"] = {0,-30},
+        ["slam_cyan"] = {-48,-10},
+        ["slam_orange"] = {-48,-10},
     }
 end
 

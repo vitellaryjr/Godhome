@@ -31,8 +31,8 @@ function MantisLord:init()
         ["idle"] = {"idle", 0.5, true},
     }
     self.offsets = {
-        ["stand"] = {10,16},
-        ["idle"] = {10,16},
+        ["stand"] = {-10,-16},
+        ["idle"] = {-10,-16},
     }
 end
 

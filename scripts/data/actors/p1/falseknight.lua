@@ -31,8 +31,8 @@ function FalseKnight:init()
         ["fall_idle"] = {"fall", 0.1, false, frames={5}},
     }
     self.offsets = {
-        ["fall"] = {0, 20},
-        ["fall_idle"] = {0, 20},
+        ["fall"] = {0, -20},
+        ["fall_idle"] = {0, -20},
     }
 end
 

@@ -1,8 +1,8 @@
 return function(cutscene, door, knight, dir)
     if dir ~= "up" then return end
-    local wait = cutscene:walkTo(knight, door.x + 40, door.y + 150, 4, "up")
+    cutscene:walkTo(knight, door.x + 40, door.y + 150, 0.1, "up")
     cutscene:panTo(door.x + 40, door.y + 110, 0.1)
-    cutscene:wait(wait)
+    cutscene:wait(0.1)
     local menu = Game.world:spawnObject(PantheonMenu(door.pantheon), "ui")
     cutscene:wait(function() return not menu.open end)
     if menu.quit then
@@ -21,7 +21,7 @@ return function(cutscene, door, knight, dir)
     Game.world.timer:tween(1, door.sprite, {y = -120}, "in-cubic")
     cutscene:wait(0.75)
     door.solid = false
-    cutscene:walkTo(knight, door.x + 40, door.y + 80, 1)
+    cutscene:walkToSpeed(knight, door.x + 40, door.y + 80, 1)
     knight.sprite:addFX(MaskFX(door.mask_sprite))
     local colormask = ColorMaskFX({1,1,1}, 0)
     knight.sprite:addFX(colormask)

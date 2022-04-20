@@ -28,7 +28,7 @@ function GruzMother:init()
         ["defeat"] = {"defeat", 1, false},
     }
     self.offsets = {
-        ["defeat"] = {2,-16}
+        ["defeat"] = {-2,16}
     }
 end
 

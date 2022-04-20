@@ -28,7 +28,7 @@ function WatcherKnight:init()
         ["asleep"] = {"asleep", 0, false},
     }
     self.offsets = {
-        ["asleep"] = {2, -10},
+        ["asleep"] = {-2, 10},
     }
 end
 

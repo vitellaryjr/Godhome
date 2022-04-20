@@ -30,7 +30,7 @@ function Uumuu:init()
         ["hurt"] = {"vulnerable", 0.1, true},
     }
     self.offsets = {
-        ["vulnerable"] = {-8,0},
+        ["vulnerable"] = {8,0},
     }
 end
 

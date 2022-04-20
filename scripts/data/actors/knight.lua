@@ -24,12 +24,12 @@ function Knight:init()
     }
 
     self.offsets = {
-        ["battle/transition"] = {14,0},
-        ["battle/idle"] = {14,0},
-        ["battle/hurt"] = {12,0},
-        ["battle/attack_ready"] = {12,0},
-        ["battle/attack"] = {12,0},
-        ["battle/spell"] = {14,0},
+        ["battle/transition"] = {-14,0},
+        ["battle/idle"] = {-14,0},
+        ["battle/hurt"] = {-12,0},
+        ["battle/attack_ready"] = {-12,0},
+        ["battle/attack"] = {-12,0},
+        ["battle/spell"] = {-14,0},
     }
 end
 

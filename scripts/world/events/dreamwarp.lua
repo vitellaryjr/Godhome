@@ -20,10 +20,9 @@ end
 
 function Warp:onEnter(knight)
     Game.world:startCutscene(function(cutscene)
-        local wait = cutscene:walkTo(knight, self.center_x, self.center_y, 4, "down")
+        cutscene:walkTo(knight, self.center_x, self.center_y, 0.5, "down")
         cutscene:panTo(self.center_x, self.center_y, 0.5)
-        cutscene:wait(wait)
-        cutscene:wait(0.5)
+        cutscene:wait(1)
         local mask = ColorMaskFX({1,1,1}, 0)
         knight:addFX(mask)
         Game.world.timer:tween(0.75, mask, {amount = 1})

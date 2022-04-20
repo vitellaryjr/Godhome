@@ -1,6 +1,6 @@
 return function(cutscene, door, knight, dir)
     if dir ~= "up" then return end
-    cutscene:walkTo(knight, door.x, door.y + 80, 4, "up")
+    cutscene:walkTo(knight, door.x, door.y + 80, 0.5, "up")
     cutscene:wait(cutscene:panTo(Game.world.width/2, door.y - 100, 0.5))
     local menu = Game.world:spawnObject(PantheonMenu(5), "ui")
     cutscene:wait(function() return not menu.open end)

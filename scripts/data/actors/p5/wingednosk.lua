@@ -37,10 +37,10 @@ function WingedNosk:init()
         ["transform_c_loop"] = {"transform_c", 0.1, true, frames = {2,3}},
     }
     self.offsets = {
-        ["transform_a"] = {10, -20},
-        ["transform_b"] = {10, -20},
-        ["transform_c"] =      {4, -10},
-        ["transform_c_loop"] = {4, -10},
+        ["transform_a"] = {-10, 20},
+        ["transform_b"] = {-10, 20},
+        ["transform_c"] =      {-4, 10},
+        ["transform_c_loop"] = {-4, 10},
     }
 end
 

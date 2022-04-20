@@ -36,9 +36,9 @@ function Radiance:init()
         ["light_final"] = {"defeat_light_final", 0.1, true},
     }
     self.offsets = {
-        ["defeat"] = {-5,-14},
-        ["defeat_light"] = {-5,-14},
-        ["defeat_light_final"] = {-5,-14},
+        ["defeat"] = {5,14},
+        ["defeat_light"] = {5,14},
+        ["defeat_light_final"] = {5,14},
     }
 end
 
