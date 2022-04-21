@@ -978,12 +978,16 @@ function Mod:getBossClears()
     }
     local clears = Game:getFlag("hall_clear", {})
     for i,difficulty in ipairs(difficulties) do
+        local has_clear = true
         for _,encounter in ipairs(self.encounters) do
             if ((difficulty_rank[clears[encounter]]) or 0) < i then
-                return highest_clear
+                has_clear = false
+                break
             end
         end
-        highest_clear = difficulty
+        if has_clear then
+            highest_clear = difficulty
+        end
     end
     return highest_clear
 end
