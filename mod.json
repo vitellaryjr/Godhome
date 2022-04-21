@@ -6,7 +6,7 @@
   "inventory": {
     "armors": ["armors/unn", "armors/steadybody", "armors/compass"]
   },
-  "version": "v1.1.0",
+  "version": "v1.1.1",
   "engineVer": "v0.4.0",
   
   "map": "hub"
