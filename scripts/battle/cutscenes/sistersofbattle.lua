@@ -21,7 +21,7 @@ return function(cutscene)
     Assets.playSound("bosses/sisters_of_battle_yell")
     en:playMusic("mantis_lords", 1)
     cutscene:wait(1)
-    en.text_override = "The Sisters of Battle team up to\ntest your full might."
+    en.text_override = "* The Sisters of Battle team up to\ntest your full might."
     cutscene:endCutscene()
     Game.battle:nextTurn()
 end

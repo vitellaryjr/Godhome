@@ -25,6 +25,9 @@ function Oro:onDefeat(damage, battler)
     local en = Game.battle.encounter
     if en.phase == 1 then
         en.phase = 2
+        if Game.battle.battle_ui.encounter_text then
+            Game.battle.battle_ui.encounter_text:setAdvance(false)
+        end
         Game.battle:startCutscene("spawnmato")
         Game.battle:resetAttackers()
     elseif en.phase == 2 then

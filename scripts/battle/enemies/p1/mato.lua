@@ -25,6 +25,9 @@ function Mato:onDefeat(damage, battler)
     local en = Game.battle.encounter
     if en.phase == 2 then
         en.phase = 3
+        if Game.battle.battle_ui.encounter_text then
+            Game.battle.battle_ui.encounter_text:setAdvance(false)
+        end
         self:setAnimation("down")
         self.sprite.shake_x = 9
         en:removeBoss(self)
