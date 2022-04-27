@@ -17,8 +17,8 @@ function Balloon:init(x, y)
     }
 end
 
-function Balloon:update(dt)
-    super:update(self, dt)
+function Balloon:update()
+    super:update(self)
     self.physics.speed = Utils.approach(self.physics.speed, 2, 0.05*DTMULT)
     local soul = Game.battle.soul
     local angle_to = Utils.angle(self.x, self.y, soul.x, soul.y)

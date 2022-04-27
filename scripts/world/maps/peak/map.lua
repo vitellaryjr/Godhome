@@ -16,8 +16,8 @@ function Peak:loadObject(name, data)
     return super:loadObject(self, name, data)
 end
 
-function Peak:update(dt)
-    super:update(self, dt)
+function Peak:update()
+    super:update(self)
     local knight = Game.world:getPartyCharacter("knight")
     Game.world.music:setVolume(Utils.clampMap(knight.y, 1300,800, 0,1))
 end

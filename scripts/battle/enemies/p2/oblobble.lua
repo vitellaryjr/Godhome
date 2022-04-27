@@ -15,10 +15,10 @@ function Oblobble:init()
     self.angry = false
 end
 
-function Oblobble:update(dt)
-    super:update(self, dt)
+function Oblobble:update()
+    super:update(self)
     if self.angry then
-        self.sine = self.sine + dt
+        self.sine = self.sine + DT
         local t = math.abs(math.sin(self.sine*2.5)) * 0.75
         self.color = Utils.lerp({1,1,1}, {1,0.1,0}, t)
     end

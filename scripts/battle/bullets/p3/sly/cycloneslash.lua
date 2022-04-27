@@ -8,8 +8,8 @@ function Cyclone:init(x, y)
     self.enemy = Game.battle:getEnemyByID("p3/sly")
 end
 
-function Cyclone:update(dt)
-    super:update(self, dt)
+function Cyclone:update()
+    super:update(self)
     local arena = Game.battle.arena
     self.physics.speed_y = Utils.approach(self.physics.speed_y, 8, 0.3*DTMULT)
     if self:collidesWith(arena.collider.colliders[3]) then

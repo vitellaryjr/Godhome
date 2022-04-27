@@ -14,8 +14,8 @@ function Drop:init(x)
     Game.battle.timer:after(2, function() self:remove() end)
 end
 
-function Drop:update(dt)
-    super:update(self, dt)
+function Drop:update()
+    super:update(self)
     self.scale_x = Utils.clampMap(self.physics.speed, 2,12, 0.5,0.3, "in-sine")
     self.scale_y = Utils.clampMap(self.physics.speed, 2,12, 0.5,1, "in-sine")
 end

@@ -9,8 +9,8 @@ function SpawnZote:init(x, y)
     self.wall_hb = Hitbox(self, 0,0, 12,12)
 end
 
-function SpawnZote:update(dt)
-    super:update(self, dt)
+function SpawnZote:update()
+    super:update(self)
     if self.wall_hb:collidesWith(Game.battle.arena.collider.colliders[3]) then
         local zote
         if love.math.random() < 0.5 then

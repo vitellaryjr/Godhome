@@ -43,8 +43,8 @@ function Baldur:onAdd(parent)
     end)
 end
 
-function Baldur:update(dt)
-    super:update(self, dt)
+function Baldur:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.charging then
         local collided = false

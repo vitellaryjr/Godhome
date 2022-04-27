@@ -1,7 +1,8 @@
-local Entrance, super = Class(InteractScript)
+local Entrance, super = Class(Interactable)
 
 function Entrance:init(data)
-    super:init(self, "enter_p5", data.x, data.y)
+    super:init(self, data.x, data.y)
+    self.cutscene = "enter_p5"
 
     self:setSprite("tilesets/doors/p5_entrance")
     self:setOrigin(0.5, 1)

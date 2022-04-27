@@ -17,8 +17,8 @@ function Charge:init(enemy)
     self.enemy = enemy
 end
 
-function Charge:update(dt)
-    super:update(self, dt)
+function Charge:update()
+    super:update(self)
     self.sprite:setFrame(self.parent.frame)
 end
 

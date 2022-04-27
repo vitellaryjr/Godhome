@@ -30,9 +30,9 @@ function Fluke:init(x)
     end)
 end
 
-function Fluke:update(dt)
-    super:update(self, dt)
-    self.sine = self.sine + dt
+function Fluke:update()
+    super:update(self)
+    self.sine = self.sine + DT
     self.x = self.ox + math.sin(self.sine*5)*10
     if self.y < -30 then
         Utils.removeFromTable(self.wave.zotes, self)

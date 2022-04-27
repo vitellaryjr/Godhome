@@ -24,7 +24,7 @@ function Lasers:onStart()
     aim.layer = aim.layer + 20
     aim.rotation = Utils.angle(aim.x, aim.y, soul.x, soul.y)
     self.timer:everyInstant(2, function()
-        self.timer:during(0.6, function(dt)
+        self.timer:during(0.6, function()
             local to = Utils.angle(aim.x, aim.y, soul.x, soul.y)
             aim.rotation = Utils.approachAngle(aim.rotation, to, 0.05*DTMULT)
         end, function()

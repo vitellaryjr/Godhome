@@ -12,8 +12,8 @@ function Bee:init(x, y)
     }
 end
 
-function Bee:update(dt)
-    super:update(self, dt)
+function Bee:update()
+    super:update(self)
     local soul = Game.battle.soul
     if self.y < soul.y then
         local angle_to = Utils.angle(self.x, self.y, soul.x, soul.y)

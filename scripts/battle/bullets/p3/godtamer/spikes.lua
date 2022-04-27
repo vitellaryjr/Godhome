@@ -17,7 +17,7 @@ function Spike:activate()
     local sx, sy = self.x, self.y
     local dx, dy = math.cos(self.rotation), math.sin(self.rotation)
     self.wave.timer:tween(0.1, self, {x = sx + 5*dx, y = sy + 5*dy}, "out-quad")
-    self.wave.timer:during(0.6, function(dt)
+    self.wave.timer:during(0.6, function()
         self.sprite:setPosition(love.math.random(-1,1), love.math.random(-1,1))
     end, function()
         self.sprite:setPosition(0,0)

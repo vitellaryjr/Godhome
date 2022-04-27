@@ -36,9 +36,9 @@ function Laser:onAdd(parent)
     end
 end
 
-function Laser:update(dt)
-    super:update(self, dt)
-    self.laser_timer = self.laser_timer + dt
+function Laser:update()
+    super:update(self)
+    self.laser_timer = self.laser_timer + DT
     if self.state == "charging" then
         self.laser_width = 2 + math.abs(math.sin(self.laser_timer*15)*2)
         self.circle_rad = 10 + math.sin(self.laser_timer*15)

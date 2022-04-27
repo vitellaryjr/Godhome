@@ -16,7 +16,7 @@ function Arcs:onStart()
     local dir = Utils.randomSign()
     local speed = Utils.random(10,12)
     self.timer:script(function(wait)
-        self.timer:during(0.5, function(dt)
+        self.timer:during(0.5, function()
             dirt.x = dirt.x + speed*dir*DTMULT
             if dirt.x < arena.left+50 then
                 dir = 1
@@ -26,7 +26,7 @@ function Arcs:onStart()
         end)
         wait(0.5)
         while true do
-            self.timer:during(0.5, function(dt)
+            self.timer:during(0.5, function()
                 dirt.x = dirt.x + speed*dir*DTMULT
                 if dirt.x < arena.left+50 then
                     dir = 1

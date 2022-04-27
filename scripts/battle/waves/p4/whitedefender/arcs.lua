@@ -15,7 +15,7 @@ function Arcs:onStart()
 
     local dir = Utils.randomSign()
     local speed = Utils.random(10,12)
-    self.timer:during(Utils.random(0.7,1), function(dt)
+    self.timer:during(Utils.random(0.7,1), function()
         dirt.x = dirt.x + speed*dir*DTMULT
         if dirt.x < arena.left+50 then
             dir = 1

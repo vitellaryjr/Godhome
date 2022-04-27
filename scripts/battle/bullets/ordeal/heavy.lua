@@ -36,8 +36,8 @@ function Heavy:onAdd(parent)
     end)
 end
 
-function Heavy:update(dt)
-    super:update(self, dt)
+function Heavy:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.x < arena.left + 20 or self.x > arena.right - 20 then
         if self.physics.speed_x then

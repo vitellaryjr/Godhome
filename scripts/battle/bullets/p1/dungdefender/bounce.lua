@@ -13,8 +13,8 @@ function Bounce:init(x, y, dir, sprite)
     self.spawning = true
 end
 
-function Bounce:update(dt)
-    super:update(self, dt)
+function Bounce:update()
+    super:update(self)
     if self.spawning then
         self.spawning = Game.battle:checkSolidCollision(self)
     else

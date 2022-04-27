@@ -54,8 +54,8 @@ function Aspid:onAdd(parent)
     end)
 end
 
-function Aspid:update(dt)
-    super:update(self, dt)
+function Aspid:update()
+    super:update(self)
     local arena = Game.battle.arena
     local soul = Game.battle.soul
 
@@ -65,8 +65,8 @@ function Aspid:update(dt)
         self.scale_x = -2
     end
 
-    self.speed_sine = self.speed_sine + dt*self.slowdown
-    self.y_sine = self.y_sine + dt
+    self.speed_sine = self.speed_sine + DT*self.slowdown
+    self.y_sine = self.y_sine + DT
 
     local speed = (1 + 1*((math.sin(self.speed_sine*4)+1)/2)) * self.slowdown
     if math.abs(self.x - soul.x) < 100 then

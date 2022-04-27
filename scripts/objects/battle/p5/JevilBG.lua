@@ -19,8 +19,8 @@ function Carousel:init()
     end
 end
 
-function Carousel:update(dt)
-    C_super:update(self, dt)
+function Carousel:update()
+    C_super:update(self)
 
     for _,point in ipairs(self.points) do
         point.angle = (point.angle-0.03*DTMULT)%(2*math.pi)

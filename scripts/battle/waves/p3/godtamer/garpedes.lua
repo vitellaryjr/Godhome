@@ -38,11 +38,11 @@ function Garpedes:onStart()
         elseif chance < 0.4 then
             self.arena_change = "resize_h"
             self.resize_h = 180
-            self.timer:during(1, function(dt)
+            self.timer:during(1, function()
                 self:setArenaSize(180+love.math.random(-2,2), 140)
             end, function()
                 self.timer:tween(0.2, self, {resize_h = 108})
-                self.timer:during(0.3, function(dt)
+                self.timer:during(0.3, function()
                     self:setArenaSize(self.resize_h, 140)
                 end)
             end)
@@ -50,11 +50,11 @@ function Garpedes:onStart()
             self.arena_change = "resize_v"
             self.resize_v = 140
             arena:shiftOrigin(0.5,1)
-            self.timer:during(1, function(dt)
+            self.timer:during(1, function()
                 self:setArenaSize(180, 140+love.math.random(-1,1))
             end, function()
                 self.timer:tween(0.2, self, {resize_v = 100})
-                self.timer:during(0.3, function(dt)
+                self.timer:during(0.3, function()
                     self:setArenaSize(180, self.resize_v)
                 end)
             end)

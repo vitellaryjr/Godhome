@@ -26,8 +26,8 @@ function Dive:onAdd(parent)
     end
 end
 
-function Dive:update(dt)
-    super:update(self, dt)
+function Dive:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self:collidesWith(arena.collider.colliders[3]) then
         self.wave:spawnBulletTo(Game.battle.mask, "common/shockwave", self.x, arena.bottom, 80, 100, 5)

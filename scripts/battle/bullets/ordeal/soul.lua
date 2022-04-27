@@ -29,9 +29,9 @@ function Soul:onAdd(parent)
     end)
 end
 
-function Soul:update(dt)
-    super:update(self, dt)
-    self.sine = self.sine + dt
+function Soul:update()
+    super:update(self)
+    self.sine = self.sine + DT
     self.y = self.oy + math.sin(self.sine*3)*5
     if self.curr_knockback > 0 then
         self.oy = self.oy + self.curr_knockback*math.sin(self.knockback_dir)*DTMULT

@@ -35,8 +35,8 @@ function Ring:init(radius, angle, spin)
     self.spin = spin
 end
 
-function Ring:update(dt)
-    super:update(self, dt)
+function Ring:update()
+    super:update(self)
     self.angle = self.angle + self.spin*DTMULT
     self:setPosition(self.radius*math.cos(self.angle), self.radius*math.sin(self.angle))
 end

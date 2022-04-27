@@ -90,7 +90,7 @@ function Menu:init(pantheon_num)
     self.hover_index = 1
 end
 
-function Menu:update(dt)
+function Menu:update()
     for _,child in ipairs(self.children) do
         if child == self.box then
             child.alpha = self.alpha * 0.8
@@ -98,7 +98,7 @@ function Menu:update(dt)
             child.alpha = self.alpha
         end
     end
-    super:update(self, dt)
+    super:update(self)
     if Input.pressed("cancel") then
         self.open = false
         self.quit = true
@@ -121,7 +121,7 @@ function Menu:update(dt)
             local cx, cy = Game.world.camera.x, Game.world.camera.y
             local intensity = 2
             if all_active then intensity = 6 end
-            Game.world.timer:during(0.2, function(dt)
+            Game.world.timer:during(0.2, function()
                 Game.world.camera.x = cx + love.math.random(-intensity, intensity)
                 Game.world.camera.y = cy + love.math.random(-intensity, intensity)
             end, function()

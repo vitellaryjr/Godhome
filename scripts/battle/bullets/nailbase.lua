@@ -38,8 +38,8 @@ function NailBullet:onAdd(parent)
     self.base_color = Utils.copy(self.color)
 end
 
-function NailBullet:update(dt)
-    super:update(self, dt)
+function NailBullet:update()
+    super:update(self)
 
     if self.curr_knockback > 0 then
         self:move(math.cos(self.knockback_dir), math.sin(self.knockback_dir), self.curr_knockback*DTMULT)

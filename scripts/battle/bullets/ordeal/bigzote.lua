@@ -159,9 +159,9 @@ function BIGZOTE:init(x)
     self:attackScript()
 end
 
-function BIGZOTE:update(dt)
-    super:update(self, dt)
-    self.sine = self.sine + dt
+function BIGZOTE:update()
+    super:update(self)
+    self.sine = self.sine + DT
     for _,part in ipairs(self.parts) do
         if part.swinging then
             part.rotation = math.sin(self.sine*part.swing_speed)*part.swing_range + part.swing_origin

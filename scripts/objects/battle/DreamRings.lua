@@ -57,8 +57,8 @@ function Ring:init(x, y, color, alpha, time, instant)
     end
 end
 
-function Ring:update(dt)
-    R_super:update(self, dt)
+function Ring:update()
+    R_super:update(self)
     if self.x < 0-self.width/2 then
         self.x = self.x + SCREEN_WIDTH + self.width
     elseif self.x > SCREEN_WIDTH+self.width/2 then

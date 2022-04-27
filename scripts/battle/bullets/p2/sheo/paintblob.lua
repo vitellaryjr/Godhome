@@ -13,8 +13,8 @@ function Blob:init(x, y)
     self.destroy_on_hit = true
 end
 
-function Blob:update(dt)
-    super:update(self, dt)
+function Blob:update()
+    super:update(self)
 
     local clamp_min, clamp_max = 2, 10
     if self.physics.speed and self.physics.direction then

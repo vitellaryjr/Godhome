@@ -10,8 +10,8 @@ function Thread:init(needle)
     self.needle = needle
 end
 
-function Thread:update(dt)
-    super:update(self, dt)
+function Thread:update()
+    super:update(self)
     if self.needle then
         self.collider.x2 = self.needle.x - self.x
         self.collider.y2 = self.needle.y - self.y

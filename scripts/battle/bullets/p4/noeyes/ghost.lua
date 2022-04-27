@@ -11,9 +11,9 @@ function Ghost:init(x, y, dir)
     self.sine = Utils.random(math.pi*2)
 end
 
-function Ghost:update(dt)
-    super:update(self, dt)
-    self.sine = self.sine + dt
+function Ghost:update()
+    super:update(self)
+    self.sine = self.sine + DT
     self.y = self.oy + 36*math.sin(self.sine*4)
 end
 

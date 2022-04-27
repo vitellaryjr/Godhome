@@ -13,8 +13,8 @@ function Wall:init(x)
     self.oob = true
 end
 
-function Wall:update(dt)
-    super:update(self, dt)
+function Wall:update()
+    super:update(self)
     local arena, soul = Game.battle.arena, Game.battle.soul
     if soul.x < self.x then
         self.physics.speed_x = Utils.approach(self.physics.speed_x, -4, 0.2*DTMULT)

@@ -58,8 +58,8 @@ function Charge:init(x, y)
     end)
 end
 
-function Charge:update(dt)
-    super:update(self, dt)
+function Charge:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.charging then
         if Game.battle:checkSolidCollision(self) then

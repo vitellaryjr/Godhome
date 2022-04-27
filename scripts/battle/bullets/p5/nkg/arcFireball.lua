@@ -35,8 +35,8 @@ function Fireball:init(x, y, sx)
     self:addChild(self.ps)
 end
 
-function Fireball:update(dt)
-    super:update(self, dt)
+function Fireball:update()
+    super:update(self)
     self.rotation = math.atan2(self.physics.speed_y, self.physics.speed_x)
 end
 

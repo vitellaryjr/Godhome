@@ -17,8 +17,8 @@ function Button:init(x, y, text)
     self:addChild(self.soul)
 end
 
-function Button:update(dt)
-    super:update(self, dt)
+function Button:update()
+    super:update(self)
     for _,child in ipairs(self.children) do
         child.alpha = self.alpha
     end

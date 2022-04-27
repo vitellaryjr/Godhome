@@ -28,8 +28,8 @@ function Shockwave:init(x, y, length, height, speed)
     end
 end
 
-function Shockwave:update(dt)
-    super:update(self, dt)
+function Shockwave:update()
+    super:update(self)
 
     self.wave_x = self.wave_x + self.speed * DTMULT
 

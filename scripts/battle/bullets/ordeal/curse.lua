@@ -30,7 +30,7 @@ function Curse:onAdd(parent)
         Game.battle:addChild(orb)
         local ox, oy = orb.x, orb.y
         self.wave.timer:tween(1, orb, {lerp = 1})
-        self.wave.timer:during(1, function(dt)
+        self.wave.timer:during(1, function()
             orb.x = Utils.lerp(ox, self.x, orb.lerp)
             orb.y = Utils.lerp(oy, self.y, orb.lerp)
         end, function()
@@ -40,10 +40,10 @@ function Curse:onAdd(parent)
     end)
 end
 
-function Curse:update(dt)
-    super:update(self, dt)
+function Curse:update()
+    super:update(self)
     local arena = Game.battle.arena
-    self.sine = self.sine + dt
+    self.sine = self.sine + DT
     self.x = self.ox + math.sin(self.sine)*(arena.width/2 - 20)
     self.y = self.oy + math.sin(self.sine*4)*5
 end

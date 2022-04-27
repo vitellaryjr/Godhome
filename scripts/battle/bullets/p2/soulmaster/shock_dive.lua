@@ -14,8 +14,8 @@ function Dive:init(x, y)
     Game.battle.timer:after(0.5, function() self.physics = {speed_y = 14} end)
 end
 
-function Dive:update(dt)
-    super:update(self, dt)
+function Dive:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self:collidesWith(arena.collider.colliders[3]) then
         self.wave:spawnBulletTo(Game.battle.mask, "common/shockwave", self.x, arena.bottom, 70, 80, 4)

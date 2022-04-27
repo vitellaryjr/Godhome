@@ -5,9 +5,9 @@ function Particle:init(texture, x, y)
     self:setOrigin(0.5, 0.5)
 end
 
-function Particle:update(dt)
-    if self.update_func then self:update_func(dt) end
-    P_super:update(self, dt)
+function Particle:update()
+    if self.update_func then self:update_func() end
+    P_super:update(self)
 end
 
 function Particle:draw()
@@ -119,7 +119,7 @@ function Emitter:init(x, y, w, h, o)
         mask = false,
         -- functions to call for the particle, comments list arguments
         init = nil, -- particle
-        update = nil, -- particle, dt
+        update = nil, -- particle
         pre_draw = nil, -- particle
         draw = nil, -- particle, super
         post_draw = nil, -- particle
@@ -391,7 +391,7 @@ function Emitter:getValue(particle, name, tbl)
             val = val + Utils.random(-vary, vary)
         end
     end
-    local round = tbl[name.."_round"] or self.data.round[name]
+    local round = tbl[name.."_round"] or (self.data.round and self.data.round[name])
     if round and type(val) == "number" then
         if type(round) == "number" then
             val = Utils.round(val, round)

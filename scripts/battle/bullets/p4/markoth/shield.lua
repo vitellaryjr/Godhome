@@ -12,8 +12,8 @@ function Shield:init(rad, dir)
     self.radius = rad
 end
 
-function Shield:update(dt)
-    super:update(self, dt)
+function Shield:update()
+    super:update(self)
     self:setPosition(self.radius*math.cos(self.rotation), self.radius*math.sin(self.rotation))
 end
 

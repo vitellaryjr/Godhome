@@ -41,7 +41,7 @@ function Slam:init(x, y)
             while self.charging do
                 wait()
             end
-            timer:during(0.2, function(dt)
+            timer:during(0.2, function()
                 arena.sprite:setPosition(love.math.random(-2,2),love.math.random(-2,2))
             end, function()
                 arena.sprite:setPosition(0,0)
@@ -58,8 +58,8 @@ function Slam:init(x, y)
     end)
 end
 
-function Slam:update(dt)
-    super:update(self, dt)
+function Slam:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.charging then
         if Game.battle:checkSolidCollision(self) then

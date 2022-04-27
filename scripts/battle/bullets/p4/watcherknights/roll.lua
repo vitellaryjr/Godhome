@@ -30,8 +30,8 @@ function Roll:onAdd(parent)
     end)
 end
 
-function Roll:update(dt)
-    super:update(self, dt)
+function Roll:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.rolling then
         for _,side in ipairs(arena.collider.colliders) do

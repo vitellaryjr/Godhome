@@ -22,10 +22,10 @@ function Scythe:onAdd(parent)
     end)
 end
 
-function Scythe:update(dt)
-    super:update(self, dt)
+function Scythe:update()
+    super:update(self)
     local arena = Game.battle.arena
-    self.sine = self.sine + dt
+    self.sine = self.sine + DT
     self.y = arena.y + arena.height*0.4*math.sin(self.sine*self.freq)
 end
 

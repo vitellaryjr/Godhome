@@ -82,8 +82,8 @@ function Nail:init(x, y)
     end)
 end
 
-function Nail:update(dt)
-    super:update(self, dt)
+function Nail:update()
+    super:update(self)
     if self.spinning then
         self.graphics.spin = self.graphics.spin + 0.2*DTMULT
         self.rotation = self.rotation % (2*math.pi)

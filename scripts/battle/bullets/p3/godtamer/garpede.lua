@@ -33,9 +33,9 @@ function Body:init(x, y, dir, speed)
     self.sine = Utils.random(math.pi*2)
 end
 
-function Body:update(dt)
-    B_super:update(self, dt)
-    self.sine = self.sine + dt
+function Body:update()
+    B_super:update(self)
+    self.sine = self.sine + DT
     local dx, dy = math.cos(self.rotation), math.sin(self.rotation)
     local sine = math.sin(self.sine*4)
     self.sprite:setPosition(2*dx*sine, 2*dy*sine)

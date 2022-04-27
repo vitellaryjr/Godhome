@@ -1,4 +1,4 @@
-local Statue, super = Class(Readable)
+local Statue, super = Class(Interactable)
 
 function Statue:init(data)
     local highest_clear = Mod:getBossClears()
@@ -17,7 +17,8 @@ function Statue:init(data)
         knight.level = 4
         knight.title = "Void given focus."
     end
-    super:init(self, {text}, data.x, data.y, data.width, data.height)
+    super:init(self, data.x, data.y, data.width, data.height)
+    self.text = {text}
 
     self.sprite = Sprite("tilesets/statues/knight_"..highest_clear, data.width/2, data.height)
     self.sprite:setOrigin(0.5, 1)

@@ -12,8 +12,8 @@ function Blade:init(x, y, dir)
     self.graphics.spin = 0.4*Utils.sign(math.cos(dir))
 end
 
-function Blade:update(dt)
-    super:update(self, dt)
+function Blade:update()
+    super:update(self)
     local arena = Game.battle.arena
     local collided = false
     for _,line in ipairs(arena.collider.colliders) do

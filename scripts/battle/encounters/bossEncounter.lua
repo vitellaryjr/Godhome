@@ -51,15 +51,6 @@ function BossEncounter:draw()
     end
 end
 
-function BossEncounter:getEncounterText()
-    local knight = Game:getPartyMember("knight")
-    if not Game:getFlag("taught_healing", false) and knight.health < knight.stats.health then
-        Game:setFlag("taught_healing", true)
-        return "* Hold "..Input.getText("cancel").." during a wave to spend\nTP to heal!"
-    end
-    return super:getEncounterText(self)
-end
-
 function BossEncounter:removeBoss(boss)
     Utils.removeFromTable(self.bosses, boss)
     Utils.removeFromTable(Game.battle.enemies, boss)

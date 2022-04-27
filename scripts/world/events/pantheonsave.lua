@@ -1,7 +1,7 @@
-local Savepoint, super = Class(Readable)
+local Savepoint, super = Class(Event)
 
 function Savepoint:init(data)
-    super:init(self, {"* You rest at the hot spring.\n* HP restored."}, data)
+    super:init(self, data)
 
     self.solid = true
 
@@ -38,7 +38,7 @@ function Savepoint:onInteract(player, dir)
         self.lifeblood = 0
         self.sprite.color = {1,1,1}
     end
-    super:onInteract(self, player, dir)
+    Game.world:showText("* You rest at the hot spring.\n* HP restored.")
     return true
 end
 

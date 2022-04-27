@@ -1,7 +1,8 @@
-local Statue, super = Class(InteractScript)
+local Statue, super = Class(Interactable)
 
 function Statue:init(data)
-    super:init(self, "enter_god", data.x, data.y, data.width, data.height)
+    super:init(self, data.x, data.y, data.width, data.height)
+    self.cutscene = "enter_god"
     self.encounter = data.properties.encounter
     self.sprite = Sprite("tilesets/statues/"..self.encounter, data.width/2, -10)
     self.sprite:setOrigin(0.5, 1)

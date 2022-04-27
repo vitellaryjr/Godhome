@@ -14,8 +14,8 @@ function Lanky:init(x)
     self.rolling = false
 end
 
-function Lanky:update(dt)
-    super:update(self, dt)
+function Lanky:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.rolling then
         if self:collidesWith(arena.collider.colliders[3]) then

@@ -18,8 +18,8 @@ function Vengefly:init(x, y)
     self.started = false
 end
 
-function Vengefly:update(dt)
-    super:update(self, dt)
+function Vengefly:update()
+    super:update(self)
     if self.started then
         self.physics.speed = Utils.approach(self.physics.speed, 3, 0.1*DTMULT)
         local soul = Game.battle.soul

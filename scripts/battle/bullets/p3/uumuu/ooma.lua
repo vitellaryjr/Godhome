@@ -11,8 +11,8 @@ function Ooma:init(x, y)
     self.starting = false
 end
 
-function Ooma:update(dt)
-    super:update(self, dt)
+function Ooma:update()
+    super:update(self)
     if self.layer == BATTLE_LAYERS["below_ui"] and self.y < 280 then
         self:setLayer(BATTLE_LAYERS["bullets"])
     end

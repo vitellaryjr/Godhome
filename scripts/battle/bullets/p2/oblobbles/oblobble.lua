@@ -23,8 +23,8 @@ function Oblobble:init(x, y, angy)
     self:addChild(self.timer)
 end
 
-function Oblobble:update(dt)
-    super:update(self, dt)
+function Oblobble:update()
+    super:update(self)
     if not self.firing then
         local arena = Game.battle.arena
         for _,line in ipairs(arena.collider.colliders) do

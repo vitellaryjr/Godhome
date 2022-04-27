@@ -17,8 +17,8 @@ function BGBlob:onAdd(parent)
     end)
 end
 
-function BGBlob:update(dt)
-    super:update(self, dt)
+function BGBlob:update()
+    super:update(self)
     if Game.battle.state ~= "DEFENDING" then
         self:remove()
         return
@@ -53,8 +53,8 @@ function WallBlob:onAdd(parent)
     end)
 end
 
-function WallBlob:update(dt)
-    super:update(self, dt)
+function WallBlob:update()
+    super:update(self)
     if Game.battle.state ~= "DEFENDING" then
         self:remove()
         return

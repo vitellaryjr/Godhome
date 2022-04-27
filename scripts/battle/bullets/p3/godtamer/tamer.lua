@@ -21,8 +21,8 @@ function Tamer:init(x, tx, time)
     self.falling = false
 end
 
-function Tamer:update(dt)
-    super:update(self, dt)
+function Tamer:update()
+    super:update(self)
     if self.y < 300 then
         self:setLayer(BATTLE_LAYERS["bullets"])
     else

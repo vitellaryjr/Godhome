@@ -58,15 +58,15 @@ function Nail:init(x, y)
     self.fury_sine = 0
 end
 
-function Nail:update(dt)
-    super:update(self, dt)
+function Nail:update()
+    super:update(self)
 
-    self.cooldown = Utils.approach(self.cooldown, 0, dt)
+    self.cooldown = Utils.approach(self.cooldown, 0, DT)
     if not self.transitioning and Input.pressed("confirm") and self.cooldown == 0 then
         self:attack()
     end
 
-    self.focus_cooldown = Utils.approach(self.focus_cooldown, 0, dt)
+    self.focus_cooldown = Utils.approach(self.focus_cooldown, 0, DT)
     local tpbar = Game.battle.tension_bar
     local tp = tpbar:getTension()
     if  Game.battle.state == "DEFENDING" and self.can_focus and Input.down("cancel")
@@ -96,11 +96,11 @@ function Nail:update(dt)
 
     if self:hasEffect("fury") then
         self.fury_ps.data.auto = true
-        self.fury_sine = (self.fury_sine + dt) % (math.pi)
+        self.fury_sine = (self.fury_sine + DT) % (math.pi)
     else
         self.fury_ps.data.auto = false
         if self.fury_sine > 0 then
-            self.fury_sine = (self.fury_sine + dt)
+            self.fury_sine = (self.fury_sine + DT)
             if self.fury_sine > math.pi then
                 self.fury_sine = 0
             end

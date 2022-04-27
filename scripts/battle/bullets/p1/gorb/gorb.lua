@@ -37,8 +37,8 @@ function Gorb:init(x, y)
     end)
 end
 
-function Gorb:update(dt)
-    super:update(self, dt)
+function Gorb:update()
+    super:update(self)
     if self.curr_knockback > 0 then
         self.sx = self.sx + self.curr_knockback*math.cos(self.knockback_dir)*DTMULT
     end

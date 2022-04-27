@@ -39,8 +39,8 @@ function Hopper:onAdd(parent)
     end)
 end
 
-function Hopper:update(dt)
-    super:update(self, dt)
+function Hopper:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.x < arena.left or self.x > arena.right then
         if self.physics.speed_x then

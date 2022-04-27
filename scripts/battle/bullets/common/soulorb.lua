@@ -56,8 +56,8 @@ function Orb:init(x, y, time, dir, spawnspeed, speed)
     end
 end
 
-function Orb:update(dt)
-    super:update(self, dt)
+function Orb:update()
+    super:update(self)
     if not self.spawning then
         local soul = Game.battle.soul
         local angle = Utils.angle(self.x, self.y, soul.x, soul.y)

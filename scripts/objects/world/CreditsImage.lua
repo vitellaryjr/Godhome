@@ -7,8 +7,8 @@ function Credits:init()
     self.fake_alpha = 0
 end
 
-function Credits:update(dt)
-    super:update(self, dt)
+function Credits:update()
+    super:update(self)
     self.alpha = Utils.round(self.fake_alpha, 0.2)
 end
 

@@ -20,8 +20,8 @@ function Vessels:onStart()
     end
 end
 
-function Vessels:update(dt)
-    super:update(self, dt)
+function Vessels:update()
+    super:update(self)
     for _,anchor in ipairs(self.vessels) do
         local prev = anchor.sine
         anchor.sine = anchor.sine + anchor.sine_speed*DTMULT

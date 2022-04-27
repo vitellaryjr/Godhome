@@ -42,8 +42,8 @@ function Button:init(x, y, name)
     self.state = "inactive"
 end
 
-function Button:update(dt)
-    super:update(self, dt)
+function Button:update()
+    super:update(self)
     for _,child in ipairs(self.children) do
         child.alpha = self.alpha
     end

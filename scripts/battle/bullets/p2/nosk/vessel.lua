@@ -33,8 +33,8 @@ function Vessel:init(x, y)
     self.shaking = false
 end
 
-function Vessel:update(dt)
-    super:update(self, dt)
+function Vessel:update()
+    super:update(self)
     if self.shaking then
         self.sprite.rotation = Utils.random(-0.1,0.1)
     else

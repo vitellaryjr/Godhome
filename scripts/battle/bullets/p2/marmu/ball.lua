@@ -10,8 +10,8 @@ function Ball:init(x, y)
     self.chasing = false
 end
 
-function Ball:update(dt)
-    super:update(self, dt)
+function Ball:update()
+    super:update(self)
     local soul = Game.battle.soul
     if self.charging then
         self.physics.speed = Utils.approach(self.physics.speed, 7.5, 0.5*DTMULT)

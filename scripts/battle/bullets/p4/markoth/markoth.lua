@@ -24,13 +24,13 @@ function Markoth:onAdd(parent)
     end)
 end
 
-function Markoth:update(dt)
-    super:update(self, dt)
+function Markoth:update()
+    super:update(self)
     if self.curr_knockback > 0 then
         self.ox = self.ox + self.curr_knockback*math.cos(self.knockback_dir)*DTMULT
         self.oy = self.oy + self.curr_knockback*math.sin(self.knockback_dir)*DTMULT
     end
-    self.sine = self.sine + dt
+    self.sine = self.sine + DT
     self:setPosition(
         self.ox + 4*math.sin(self.sine*3),
         self.oy + 4*math.sin(self.sine*2)

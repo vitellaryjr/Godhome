@@ -37,8 +37,8 @@ function Scythe:dash(fast)
     end)
 end
 
-function Scythe:update(dt)
-    super:update(self, dt)
+function Scythe:update()
+    super:update(self)
     self.top:setPosition(self:getPosition())
     self.top:setColor(self:getColor())
     self.bottom:setPosition(self:getPosition())

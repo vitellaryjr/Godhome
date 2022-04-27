@@ -19,8 +19,8 @@ function Conveyor:init(speed, dir, height)
     self.shards = {}
 end
 
-function Conveyor:update(dt)
-    super:update(self, dt)
+function Conveyor:update()
+    super:update(self)
     local arena, soul = Game.battle.arena, Game.battle.soul
     soul:move(math.cos(self.dir), math.sin(self.dir), self.speed*DTMULT)
     for _,belt in ipairs(self.belts) do

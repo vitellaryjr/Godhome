@@ -14,8 +14,8 @@ function Xero:init(x, y)
     self.sx = x
 end
 
-function Xero:update(dt)
-    super:update(self, dt)
+function Xero:update()
+    super:update(self)
     if self.curr_knockback > 0 then
         self.sx = self.sx + self.curr_knockback*math.cos(self.knockback_dir)*DTMULT
     end

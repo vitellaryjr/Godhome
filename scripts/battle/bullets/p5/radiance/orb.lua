@@ -45,8 +45,8 @@ function Orb:onAdd(parent)
     end)
 end
 
-function Orb:update(dt)
-    super:update(self, dt)
+function Orb:update()
+    super:update(self)
     local soul = Game.battle.soul
     local angle = Utils.angle(self, soul)
     self.physics.speed_x = Utils.approach(self.physics.speed_x, 10*math.cos(angle), 0.28*DTMULT)

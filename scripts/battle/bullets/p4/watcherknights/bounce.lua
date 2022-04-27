@@ -30,8 +30,8 @@ function Bounce:onAdd(parent)
     end)
 end
 
-function Bounce:update(dt)
-    super:update(self, dt)
+function Bounce:update()
+    super:update(self)
     if self.bouncing then
         local arena = Game.battle.arena
         if self.wall_collider:collidesWith(arena.collider.colliders[2]) or self.wall_collider:collidesWith(arena.collider.colliders[4]) then

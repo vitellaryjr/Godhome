@@ -30,8 +30,8 @@ function Fireball:onAdd(parent)
     end
 end
 
-function Fireball:update(dt)
-    super:update(self, dt)
+function Fireball:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.x < arena.left - 10 or self.x > arena.right + 10 or self.y > arena.bottom + 10 then
         self:remove()

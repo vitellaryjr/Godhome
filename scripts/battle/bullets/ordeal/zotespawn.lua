@@ -11,8 +11,8 @@ function SpawnZote:init(x, y, type)
     self.type = type
 end
 
-function SpawnZote:update(dt)
-    super:update(self, dt)
+function SpawnZote:update()
+    super:update(self)
     if self.wall_hb:collidesWith(Game.battle.arena.collider.colliders[3]) then
         local zote = self.wave:spawnBullet("ordeal/"..self.type, self.x, self.y)
         zote.zote_type = self.type

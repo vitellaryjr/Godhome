@@ -9,8 +9,8 @@ function BG:init()
     self.size = 50
 end
 
-function BG:update(dt)
-    super:update(self, dt)
+function BG:update()
+    super:update(self)
     self.offset = self.offset + self.speed*DTMULT
 
     if self.offset > self.size*3 then

@@ -13,8 +13,8 @@ function Defender:init(x, y)
     }
 end
 
-function Defender:update(dt)
-    super:update(self, dt)
+function Defender:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.y > arena.bottom+20 then
         self:remove()

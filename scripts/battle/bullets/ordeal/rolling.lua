@@ -17,8 +17,8 @@ function Rolling:init(x)
     self.rolling = false
 end
 
-function Rolling:update(dt)
-    super:update(self, dt)
+function Rolling:update()
+    super:update(self)
     local arena = Game.battle.arena
     if not self.rolling then
         if self:collidesWith(arena.collider.colliders[3]) then

@@ -26,9 +26,9 @@ function Nightmare:onBattleStart()
     Game.battle:addChild(self.heart)
 end
 
-function Nightmare:update(dt)
-    super:update(self, dt)
-    self.beat_timer = self.beat_timer + dt
+function Nightmare:update()
+    super:update(self)
+    self.beat_timer = self.beat_timer + DT
     if self.beat_timer > 0.5 then
         self.beat = self.beat + 1
         self.beat_timer = self.beat_timer - 0.5

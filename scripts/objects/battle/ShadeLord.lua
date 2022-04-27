@@ -71,9 +71,9 @@ function ShadeLord:init()
     self.sine = 0
 end
 
-function ShadeLord:update(dt)
-    super:update(self, dt)
-    self.sine = self.sine + dt
+function ShadeLord:update()
+    super:update(self)
+    self.sine = self.sine + DT
     self.s1.x = math.sin(self.sine*5)*1
     self.s2.x = math.sin(self.sine*4)*-1
     self.s1.y = math.sin(self.sine*3)*2

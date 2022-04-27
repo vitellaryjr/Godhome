@@ -30,8 +30,8 @@ function Spirits:onStart()
     end)
 end
 
-function Spirits:update(dt)
-    super:update(self, dt)
+function Spirits:update()
+    super:update(self)
     if self.noeyes then
         local soul = Game.battle.soul
         local dist_x, dist_y = self.noeyes.x - soul.x, self.noeyes.y - soul.y

@@ -16,8 +16,8 @@ function Dung:init(x, y, sx)
     self.spawning = true
 end
 
-function Dung:update(dt)
-    super:update(self, dt)
+function Dung:update()
+    super:update(self)
     if self.spawning then
         self.spawning = Game.battle:checkSolidCollision(self)
     else

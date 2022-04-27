@@ -5,8 +5,8 @@ function Attachment:init(height)
     self.layer = BATTLE_LAYERS["bottom"]+100
 end
 
-function Attachment:update(dt)
-    super:update(self, dt)
+function Attachment:update()
+    super:update(self)
     if Game.battle.battle_ui then
         self.y = Utils.clampMap(Game.battle.battle_ui.y, 325,480, 325,480+self.height)
     end

@@ -7,8 +7,8 @@ function Attachment:init()
     self.actbar_y = 480
 end
 
-function Attachment:update(dt)
-    super:update(self, dt)
+function Attachment:update()
+    super:update(self)
     if Game.battle.battle_ui then
         self.ui_y = Game.battle.battle_ui.y
         local actbox = Game.battle.battle_ui.action_boxes[1]

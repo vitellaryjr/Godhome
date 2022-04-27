@@ -21,8 +21,8 @@ function MantisLord:onAdd(parent)
     parent:addChild(self.chair)
 end
 
-function MantisLord:update(dt)
-    super:update(self, dt)
+function MantisLord:update()
+    super:update(self)
     self.chair.color = self.color
 end
 

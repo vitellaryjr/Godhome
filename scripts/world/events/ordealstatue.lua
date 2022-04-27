@@ -1,7 +1,7 @@
-local Statue, super = Class(InteractScript)
+local Statue, super = Class(Event)
 
 function Statue:init(data)
-    super:init(self, "", data.x, data.y, data.width, data.height)
+    super:init(self, data.x, data.y, data.width, data.height)
     self.solid = true
     self.sprite = Sprite("tilesets/statues/ordeal", data.width/2, data.height - 10)
     self.sprite:setOrigin(0.5, 1)

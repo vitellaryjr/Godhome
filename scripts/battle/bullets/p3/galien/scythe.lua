@@ -13,8 +13,8 @@ function Scythe:onAdd(parent)
     end)
 end
 
-function Scythe:update(dt)
-    super:update(self, dt)
+function Scythe:update()
+    super:update(self)
     local arena = Game.battle.arena
     local soul = Game.battle.soul
 

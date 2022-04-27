@@ -272,7 +272,7 @@ return {
                 p.drift_angle = Utils.random(math.pi*2)
                 p.drift_speed = Utils.random(0.1,0.2)
             end,
-            update = function(p, dt)
+            update = function(p)
                 p.x = p.x + math.cos(p.drift_angle)*p.drift_speed*DTMULT
                 p.y = p.y + math.sin(p.drift_angle)*p.drift_speed*DTMULT
             end,

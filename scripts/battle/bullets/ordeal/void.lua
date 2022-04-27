@@ -28,8 +28,8 @@ function Void:init(x, y)
     end)
 end
 
-function Void:update(dt)
-    super:update(self, dt)
+function Void:update()
+    super:update(self)
     if self.teleporting then return end
     self.physics.speed = Utils.approach(self.physics.speed, 1.5, 0.05*DTMULT)
     local soul = Game.battle.soul

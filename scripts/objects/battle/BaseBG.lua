@@ -6,8 +6,8 @@ function BG:init(fill)
     self.fill = fill or {0,0,0}
 end
 
-function BG:update(dt)
-    super:update(self, dt)
+function BG:update()
+    super:update(self)
     self.fade = Game.battle.transition_timer / 10
 end
 

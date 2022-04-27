@@ -13,8 +13,8 @@ function Falling:init(x)
     }
 end
 
-function Falling:update(dt)
-    super:update(self, dt)
+function Falling:update()
+    super:update(self)
     local arena = Game.battle.arena
     self.physics.speed_x = Utils.approach(self.physics.speed_x, 0, 0.2*DTMULT)
     self.physics.speed_y = Utils.approach(self.physics.speed_y, 12, 0.4*DTMULT)

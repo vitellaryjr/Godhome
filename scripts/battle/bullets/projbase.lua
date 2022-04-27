@@ -8,8 +8,8 @@ function Projectile:init(x, y, sprite)
     self.launched = false
 end
 
-function Projectile:update(dt)
-    super:update(self, dt)
+function Projectile:update()
+    super:update(self)
     if self.launched then
         if self:collidesWith(Game.battle.encounter.player_proj_hb) then
             self:launchHit(Game.battle:getPartyByID("knight"))

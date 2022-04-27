@@ -14,8 +14,8 @@ function Jump:init(x, y, dir_x, dir_y)
     self.dir_y = dir_y
 end
 
-function Jump:update(dt)
-    super:update(self, dt)
+function Jump:update()
+    super:update(self)
     local arena = Game.battle.arena
     local x, y, w, h = arena.x, arena.y, arena.width/2, arena.height/2
     if Utils.sign(self.x - arena.x) == -self.dir_x then

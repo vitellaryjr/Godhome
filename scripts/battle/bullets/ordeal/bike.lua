@@ -62,8 +62,8 @@ function Bike:onAdd(parent)
     end)
 end
 
-function Bike:update(dt)
-    super:update(self, dt)
+function Bike:update()
+    super:update(self)
     if self.charging then
         for _,zote in ipairs(self.wave.zotes) do
             if zote ~= self and not zote.immune and zote:collidesWith(self) then

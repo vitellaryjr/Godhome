@@ -78,8 +78,8 @@ function Mod:loadHooks()
             box:addChild(box.hp_bind)
         end
     end)
-    Utils.hook(ActionBoxDisplay, "update", function(orig, box, dt)
-        orig(box, dt)
+    Utils.hook(ActionBoxDisplay, "update", function(orig, box)
+        orig(box)
         if Game:getFlag("bindings", {}).hp then
             box.hp_bind.y = 20 - box.actbox.data_offset
         end
@@ -212,17 +212,17 @@ function Mod:loadHooks()
         battler:addFX(battler.fury_mask)
         battler.fury_sine = 0
     end)
-    Utils.hook(PartyBattler, "update", function(orig, battler, dt)
-        orig(battler, dt)
+    Utils.hook(PartyBattler, "update", function(orig, battler)
+        orig(battler)
         local player = battler.chara
         if player:getArmor(2).id == "armors/fury" then
             if player.health <= 15 then
                 battler.fury_ps.data.auto = true
-                battler.fury_sine = (battler.fury_sine + dt) % (math.pi)
+                battler.fury_sine = (battler.fury_sine + DT) % (math.pi)
             else
                 battler.fury_ps.data.auto = false
                 if battler.fury_sine > 0 then
-                    battler.fury_sine = (battler.fury_sine + dt)
+                    battler.fury_sine = (battler.fury_sine + DT)
                     if battler.fury_sine > math.pi then
                         battler.fury_sine = 0
                     end
@@ -268,8 +268,8 @@ function Mod:loadHooks()
             end
         end
     end
-    Utils.hook(Battle, "update", function(orig, battle, dt)
-        orig(battle, dt)
+    Utils.hook(Battle, "update", function(orig, battle)
+        orig(battle)
         if battle.encounter.darkness then
             local player = battle:getPartyByID("knight")
             if player then
@@ -305,8 +305,8 @@ function Mod:loadHooks()
             addLight("soul", x, y, 48)
         end
     end)
-    Utils.hook(Soul, "update", function(orig, soul, dt)
-        orig(soul, dt)
+    Utils.hook(Soul, "update", function(orig, soul)
+        orig(soul)
         if Game.battle.encounter.darkness then
             local light = getLight("soul")
             if light then
@@ -323,8 +323,8 @@ function Mod:loadHooks()
     end)
 
     -- small ui override to allow custom y position
-    Utils.hook(BattleUI, "update", function(orig, ui, dt)
-        orig(ui, dt)
+    Utils.hook(BattleUI, "update", function(orig, ui)
+        orig(ui)
         if ui.override_y then
             ui.y = ui.override_y
         end
@@ -462,7 +462,7 @@ function Mod:loadHooks()
                 game.gameover_screenshot = nil
                 wait(1.5)
                 Assets.playSound("player/dream_enter")
-                game.stage.timer:during(5, function(dt)
+                game.stage.timer:during(5, function()
                     if game.soul then
                         game.soul.x = x + love.math.random(-2,2)
                     end
@@ -520,7 +520,7 @@ function Mod:loadHooks()
                 game.battle = nil
                 game.gameover_screenshot = nil
                 wait(1.5)
-                game.stage.timer:during(5, function(dt)
+                game.stage.timer:during(5, function()
                     if game.soul then
                         game.soul.x = x + love.math.random(-2,2)
                     end
@@ -600,10 +600,10 @@ function Mod:getActionButtons(battler, buttons)
     return {"fight", "magic", "defend"}
 end
 
-function Mod:preUpdate(dt)
+function Mod:preUpdate()
     if Game.state == "PANTHEON_GAMEOVER" then
-        Game.playtime = Game.playtime + dt
-        Game.stage:update(dt)
+        Game.playtime = Game.playtime + DT
+        Game.stage:update()
         return true
     end
 end
@@ -859,7 +859,7 @@ function Mod:openArenaCorner(arena, dist, time, corner)
         end
         side_dir = side_dir + math.pi/2
     end
-    Game.battle.timer:during(time + 0.01, function(dt)
+    Game.battle.timer:during(time + 0.01, function()
         local r_sides = {}
         for i,p in ipairs(sides) do
             local px, py = Utils.round(p[1]), Utils.round(p[2])
@@ -898,7 +898,7 @@ function Mod:revertArenaCorner(arena, time)
             local p2 = sides[i+3]
             local x2, y2 = p2[1] - dist*dx, p2[2] - dist*dy
             Game.battle.timer:tween(time, sides[i+3], {x2, y2})
-            Game.battle.timer:during(time, function(dt)
+            Game.battle.timer:during(time, function()
                 local r_sides = {}
                 for j,p in ipairs(sides) do
                     local px, py = Utils.round(p[1]), Utils.round(p[2])

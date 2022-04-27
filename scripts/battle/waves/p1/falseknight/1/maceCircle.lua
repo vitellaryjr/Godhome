@@ -16,8 +16,8 @@ function Circle:onStart()
     self.timer:after(0.5, function() self.spin = self.spin + 0.002*DTMULT end)
 end
 
-function Circle:update(dt)
-    super:update(self, dt)
+function Circle:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.spin > 0 then
         self.spin = Utils.approach(self.spin, 0.08, 0.002*DTMULT)

@@ -62,8 +62,8 @@ function Head:onAdd(parent)
     end)
 end
 
-function Head:update(dt)
-    super:update(self, dt)
+function Head:update()
+    super:update(self)
     if self.shaking then
         self.sprite.x = love.math.random(-1,1)
     else

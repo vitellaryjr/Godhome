@@ -8,8 +8,8 @@ function FloatyBoss:init()
     self.float_speed = 0.05
 end
 
-function FloatyBoss:update(dt)
-    super:update(self, dt)
+function FloatyBoss:update()
+    super:update(self)
     self.sine = self.sine + self.float_speed*DTMULT
     self.sprite.y = math.sin(self.sine)*self.float_height
     self.overlay_sprite.y = math.sin(self.sine)*self.float_height

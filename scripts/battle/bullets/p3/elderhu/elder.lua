@@ -14,8 +14,8 @@ function Elder:init(x, y)
     self.sx = x
 end
 
-function Elder:update(dt)
-    super:update(self, dt)
+function Elder:update()
+    super:update(self)
     if self.curr_knockback > 0 then
         self.sx = self.sx + self.curr_knockback*math.cos(self.knockback_dir)*DTMULT
     end

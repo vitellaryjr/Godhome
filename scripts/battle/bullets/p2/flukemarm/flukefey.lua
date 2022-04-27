@@ -29,8 +29,8 @@ function Flukefey:hit(source, damage)
     }
 end
 
-function Flukefey:update(dt)
-    super:update(self, dt)
+function Flukefey:update()
+    super:update(self)
     local soul = Game.battle.soul
     local angle_to = Utils.angle(self.x, self.y, soul.x, soul.y)
     self.physics.speed_x = Utils.approach(self.physics.speed_x, 8*math.cos(angle_to), 0.4*DTMULT)

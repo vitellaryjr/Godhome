@@ -15,8 +15,8 @@ function Zoteling:init(x)
     self.rolling = false
 end
 
-function Zoteling:update(dt)
-    super:update(self, dt)
+function Zoteling:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.spawning then
         if self.wall_hb:collidesWith(arena.collider.colliders[1]) then

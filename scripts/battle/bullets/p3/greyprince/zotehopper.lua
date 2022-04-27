@@ -34,8 +34,8 @@ function ZoteHopper:onAdd(parent)
     end)
 end
 
-function ZoteHopper:update(dt)
-    super:update(self, dt)
+function ZoteHopper:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.x < arena.left or self.x > arena.right then
         self.physics.speed_x = self.physics.speed_x * -1

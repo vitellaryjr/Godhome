@@ -32,10 +32,10 @@ function NoEyes:onAdd(parent)
     end)
 end
 
-function NoEyes:update(dt)
-    super:update(self, dt)
-    self.tele_cooldown = Utils.approach(self.tele_cooldown, 0, dt)
-    self.sine = self.sine + dt
+function NoEyes:update()
+    super:update(self)
+    self.tele_cooldown = Utils.approach(self.tele_cooldown, 0, DT)
+    self.sine = self.sine + DT
     self:setPosition(
         self.ox + 6*math.sin(self.sine*3),
         self.oy + 6*math.sin(self.sine*2)

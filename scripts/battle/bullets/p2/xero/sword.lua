@@ -14,8 +14,8 @@ function XeroSword:init(xero, ox, oy, buff)
     self.state = "idle"
 end
 
-function XeroSword:update(dt)
-    super:update(self, dt)
+function XeroSword:update()
+    super:update(self)
     if self.state == "idle" or self.state == "preparing" then
         self:setPosition(self.xero.x + self.ox, self.xero.y + self.oy)
     elseif self.state == "attacking" then

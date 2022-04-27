@@ -1,8 +1,9 @@
-local Door, super = Class(InteractScript)
+local Door, super = Class(Interactable)
 
 function Door:init(data)
-    super:init(self, "enter_pantheon", data.x, data.y, data.width, data.height)
+    super:init(self, data.x, data.y, data.width, data.height)
 
+    self.cutscene = "enter_pantheon"
     self:setSprite("tilesets/doors/door")
     self.mask_sprite = Sprite("tilesets/doors/door_mask")
     self.mask_sprite.layer = -1

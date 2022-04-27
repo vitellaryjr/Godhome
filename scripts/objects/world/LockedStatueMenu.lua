@@ -26,7 +26,7 @@ function Menu:init(statue)
     self.quit = false
 end
 
-function Menu:update(dt)
+function Menu:update()
     for _,child in ipairs(self.children) do
         if child == self.box then
             child.alpha = self.alpha * 0.8
@@ -34,7 +34,7 @@ function Menu:update(dt)
             child.alpha = self.alpha
         end
     end
-    super:update(self, dt)
+    super:update(self)
     if Input.pressed("cancel") then
         self.open = false
         self.quit = true

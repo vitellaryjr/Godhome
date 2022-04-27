@@ -17,8 +17,8 @@ function Chase:onStart()
     end)
 end
 
-function Chase:update(dt)
-    super:update(self, dt)
+function Chase:update()
+    super:update(self)
     local arena = Game.battle.arena
     for _,bullet in ipairs(self.bullets) do
         if bullet.inside == 0 and bullet:collidesWith(arena.area_collider) then

@@ -18,8 +18,8 @@ function Dung:init(x, y, dir)
     self.state = "spawning"
 end
 
-function Dung:update(dt)
-    super:update(self, dt)
+function Dung:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.state == "spawning" then
         if not Game.battle:checkSolidCollision(self) then

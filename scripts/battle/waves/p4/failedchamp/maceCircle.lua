@@ -18,8 +18,8 @@ function Circle:onStart()
     end)
 end
 
-function Circle:update(dt)
-    super:update(self, dt)
+function Circle:update()
+    super:update(self)
     local arena = Game.battle.arena
     if self.mace then
         self.spin = Utils.approach(self.spin, 0.1, 0.005*DTMULT)

@@ -40,8 +40,8 @@ function Turret:onAdd(parent)
     end)
 end
 
-function Turret:update(dt)
-    super:update(self, dt)
+function Turret:update()
+    super:update(self)
     if self.shaking then
         self.sprite.x = love.math.random(-1,1)
     else

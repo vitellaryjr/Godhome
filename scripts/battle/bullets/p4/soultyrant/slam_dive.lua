@@ -18,8 +18,8 @@ function Dive:onAdd(parent)
     self.wave.timer:after(0.3, function() self.physics = {speed_y = 16} end)
 end
 
-function Dive:update(dt)
-    super:update(self, dt)
+function Dive:update()
+    super:update(self)
     local arena = Game.battle.arena
     local soul = Game.battle.soul
     if self.physics.speed_y <= 0 then

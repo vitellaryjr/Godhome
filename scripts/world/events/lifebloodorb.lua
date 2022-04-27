@@ -10,11 +10,11 @@ function Orb:init(data)
     self.pulse = true
 end
 
-function Orb:update(dt)
-    super:update(self, dt)
+function Orb:update()
+    super:update(self)
     if self.pulse then
         local prev_value = self.sine
-        self.sine = self.sine + dt
+        self.sine = self.sine + DT
         self.sprite.color[1] = 0.5 + 0.2*math.sin(self.sine*2)
         if self.sine % (math.pi*3/4) < prev_value % (math.pi*3/4) then
             Assets.playSound("lifeblood_throb", Utils.random(0.3,0.5))

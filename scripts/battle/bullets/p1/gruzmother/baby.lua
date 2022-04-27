@@ -15,8 +15,8 @@ function Baby:init(x, y)
     self.scale_x = 2*Utils.sign(math.cos(self.physics.direction))
 end
 
-function Baby:update(dt)
-    super:update(self, dt)
+function Baby:update()
+    super:update(self)
     local arena = Game.battle.arena
     for _,line in ipairs(arena.collider.colliders) do
         if self:collidesWith(line) then

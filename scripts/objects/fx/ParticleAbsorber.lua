@@ -5,9 +5,9 @@ function Particle:init(texture, x, y)
     self:setOrigin(0.5, 0.5)
 end
 
-function Particle:update(dt)
-    if self.update_func then self:update_func(dt) end
-    P_super:update(self, dt)
+function Particle:update()
+    if self.update_func then self:update_func() end
+    P_super:update(self)
 end
 
 function Particle:draw()
@@ -92,7 +92,7 @@ function Absorber:init(x, y, o)
         -- whether particles should be masked to the arena
         mask = false,
         -- functions to call for the particle
-        update = nil, -- function(particle, dt)
+        update = nil, -- function(particle)
         pre_draw = nil, --    ...(particle)
         draw = nil, --        ...(particle, super), passing in super for calling super:draw(particle)
         post_draw = nil, --   ...(particle)

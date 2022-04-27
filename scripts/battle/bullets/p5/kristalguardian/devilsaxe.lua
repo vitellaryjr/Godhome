@@ -13,8 +13,8 @@ function Axe:init(x, y, angle, dist)
     self.spinning = 0
 end
 
-function Axe:update(dt)
-    super:update(self, dt)
+function Axe:update()
+    super:update(self)
     if self.spinning > 0 then
         self.sine = self.sine + 0.08*DTMULT*self.spinning
         self.angle = self.angle + 0.04*DTMULT*self.spinning
