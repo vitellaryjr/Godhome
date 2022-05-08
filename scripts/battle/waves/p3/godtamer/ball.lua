@@ -11,7 +11,7 @@ function Ball:onStart()
         self.timer:everyInstant(3, function()
             self:spawnBeast()
         end)
-        if Game.battle:getEnemyByID("p3/godtamer") then
+        if Game.battle:getEnemyBattler("p3/godtamer") then
             self.timer:after(1.2, function()
                 self.timer:everyInstant(3, function()
                     self:spawnBullet("p3/godtamer/tamer", 480, Game.battle.soul.x, 2.3)

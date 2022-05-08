@@ -31,7 +31,7 @@ function Radiance:onBattleStart()
     self.overlay = AdditiveOverlay({0.03,0.03,0.01})
     Game.battle:addChild(self.overlay)
 
-    local radiance = Game.battle:getEnemyByID("p5/radiance")
+    local radiance = Game.battle:getEnemyBattler("p5/radiance")
     self.glow = Sprite("enemies/p5/radiance/bg_glow", radiance.x, radiance.y - radiance.height)
     self.glow:setOrigin(0.5, 0.5)
     self.glow:setScale(2)
@@ -43,7 +43,7 @@ end
 
 function Radiance:getNextWaves()
     -- self:advancePhase(2)
-    local radiance = Game.battle:getEnemyByID("p5/radiance")
+    local radiance = Game.battle:getEnemyBattler("p5/radiance")
     Game.battle.timer:tween(0.3, radiance, {scale_x = 0}, "linear", function()
         radiance.scale_x = 0
     end)
@@ -76,7 +76,7 @@ end
 
 function Radiance:onTurnStart()
     if Game.battle.turn_count > 1 then
-        local radiance = Game.battle:getEnemyByID("p5/radiance")
+        local radiance = Game.battle:getEnemyBattler("p5/radiance")
         Game.battle.timer:tween(0.3, radiance, {scale_x = 2}, "linear", function()
             radiance.scale_x = 2
         end)
@@ -87,7 +87,7 @@ function Radiance:onTurnStart()
 end
 
 function Radiance:onDialogueEnd()
-    local radiance = Game.battle:getEnemyByID("p5/radiance")
+    local radiance = Game.battle:getEnemyBattler("p5/radiance")
     if radiance.phase == 2 then
         radiance:setAnimation("angry")
         Assets.playSound("bosses/radiance/scream_short_b")

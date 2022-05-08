@@ -5,7 +5,7 @@ function Gorb:init(x, y)
     self.sprite:play(0.2, true)
     self:setHitbox(15,5, 9,27)
 
-    self.enemy = Game.battle:getEnemyByID("p1/gorb")
+    self.enemy = Game.battle:getEnemyBattler("p1/gorb")
     self.knockback = 4
 
     self.sine = 0

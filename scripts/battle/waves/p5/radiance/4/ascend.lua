@@ -50,7 +50,7 @@ function Ascend:onStart()
                 ps.y = ps.y - offset/3
                 en.clouds_b.y = en.clouds_b.y - offset/4
 
-                local knight = Game.battle:getPartyByID("knight")
+                local knight = Game.battle:getPartyBattler("knight")
                 knight.y = knight.y - offset/2
                 local tpbar = Game.battle.tension_bar
                 tpbar.y = tpbar.y - offset/2
@@ -131,7 +131,7 @@ function Ascend:onStart()
         ambience:stop()
         arena.color = {0,0,0,0}
         arena.bg_color = {0,0,0,0}
-        local enemy_rad = Game.battle:getEnemyByID("p5/radiance")
+        local enemy_rad = Game.battle:getEnemyBattler("p5/radiance")
         enemy_rad.scale_x = 2
         enemy_rad:setPosition(self.radiance.x, self.radiance.y + self.radiance.height)
         enemy_rad:setAnimation("shake")
@@ -141,7 +141,7 @@ function Ascend:onStart()
         en.glow:setPosition(self.radiance.x, self.radiance.y)
         Game.battle.timer:tween(0.5, en.glow, {alpha = 0})
         wait(0.3)
-        local knight = Game.battle:getPartyByID("knight")
+        local knight = Game.battle:getPartyBattler("knight")
         knight.y = 600
         Game.battle:returnSoul()
 

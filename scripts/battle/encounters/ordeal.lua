@@ -16,7 +16,7 @@ function Ordeal:onBattleStart()
     Game.battle:addChild(StandardBG({0.1, 0.1, 0.15}, {0.1, 0.1, 0.18}))
     Game.battle.zote_ui = OrdealUI()
     Game.battle:addChild(Game.battle.zote_ui)
-    local player = Game.battle:getPartyByID("knight")
+    local player = Game.battle:getPartyBattler("knight")
     player.y = 272
     
     Game.battle:setState("NONE")

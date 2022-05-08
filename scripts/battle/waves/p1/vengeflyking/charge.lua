@@ -10,7 +10,7 @@ end
 function Charge:onStart()
     local arena = Game.battle.arena
 
-    local enemy = Game.battle:getEnemyByID("p1/vengeflyking")
+    local enemy = Game.battle:getEnemyBattler("p1/vengeflyking")
     enemy.sprite:setAnimation("charge")
     self:spawnBulletTo(enemy.sprite, "p1/vengeflyking/chargeking", enemy)
     self.orig_data = {x = enemy.x, y = enemy.y, layer = enemy.layer}
@@ -29,7 +29,7 @@ function Charge:onStart()
 end
 
 function Charge:onEnd()
-    local enemy = Game.battle:getEnemyByID("p1/vengeflyking") or Mod:getDeadEnemyByID("p1/vengeflyking")
+    local enemy = Game.battle:getEnemyBattler("p1/vengeflyking") or Mod:getDeadEnemyByID("p1/vengeflyking")
     enemy.sprite:setAnimation("idle")
     enemy.scale_x = 2
     local x, y = self.orig_data.x, self.orig_data.y
@@ -42,7 +42,7 @@ end
 function Charge:charge(dir)
     local arena = Game.battle.arena
     local soul = Game.battle.soul
-    local enemy = Game.battle:getEnemyByID("p1/vengeflyking")
+    local enemy = Game.battle:getEnemyBattler("p1/vengeflyking")
 
     local end_pos = (dir == "left") and (arena.left - 100) or (arena.right + 100)
     local target_y = soul.y + 30

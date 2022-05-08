@@ -25,7 +25,7 @@ function Uumuu:onDialogueEnd()
     if self.vuln_count > 0 then
         Game.battle:nextTurn()
     elseif self.vuln_count == 0 then
-        local battler = Game.battle:getEnemyByID("p3/uumuu")
+        local battler = Game.battle:getEnemyBattler("p3/uumuu")
         battler.hurt_timer = 0.4
         battler.sprite.shake_x = 4
         battler:setAnimation("idle")

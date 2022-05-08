@@ -5,7 +5,7 @@ function Galien:init(x, y)
     self.sprite:play(0.4, true)
     self.collider = CircleCollider(self, 15, 11, 10)
 
-    self.enemy = Game.battle:getEnemyByID("p3/galien")
+    self.enemy = Game.battle:getEnemyBattler("p3/galien")
     self.knockback = 4
 
     self.sine = 0

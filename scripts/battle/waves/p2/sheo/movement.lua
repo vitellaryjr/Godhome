@@ -8,7 +8,7 @@ end
 
 function Movement:onStart()
     local arena = Game.battle.arena
-    local sheo = Game.battle:getEnemyByID("p2/sheo")
+    local sheo = Game.battle:getEnemyBattler("p2/sheo")
     self.timer:tween(0.5, sheo, {x = 540}, "out-quad")
     self.timer:everyInstant(2, function()
         self.timer:script(function(wait)
@@ -62,7 +62,7 @@ function Movement:onStart()
 end
 
 function Movement:onEnd()
-    local sheo = Game.battle:getEnemyByID("p2/sheo")
+    local sheo = Game.battle:getEnemyBattler("p2/sheo")
     Game.battle.timer:tween(0.2, sheo, {x = 520}, "linear")
     sheo:setAnimation("idle")
 end

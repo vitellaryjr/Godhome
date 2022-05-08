@@ -36,7 +36,7 @@ function Knight:init()
     self.battle_offset = {14,0}
 
     self.attack_sprite = "effects/attack/cut"
-    self.attack_sound = "snd_laz_c"
+    self.attack_sound = "laz_c"
     self.attack_pitch = 0.8
 end
 

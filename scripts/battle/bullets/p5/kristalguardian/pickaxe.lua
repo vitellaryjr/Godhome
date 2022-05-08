@@ -27,7 +27,7 @@ end
 
 function Pickaxe:launchHit(battler)
     super:launchHit(self, battler)
-    if battler == Game.battle:getEnemyByID("p5/kristalguardian") and battler.health < 0 then
+    if battler == Game.battle:getEnemyBattler("p5/kristalguardian") and battler.health < 0 then
         self.wave.finished = true
         battler:onDefeat()
     end

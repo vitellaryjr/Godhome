@@ -1,5 +1,5 @@
 return function(cutscene)
-    local end_time = love.timer.getTime()
+    local end_time = Kristal.getTime()
     local total_time = end_time - (Game:getFlag("pantheon_start_time", end_time))
     local num = Game:getFlag("pantheon_num", 1)
     cutscene:detachCamera()
@@ -70,7 +70,7 @@ return function(cutscene)
     cutscene:wait(1)
     cutscene:attachCameraImmediate()
     local marker = "p"..num.."_exit"
-    Game.world:transitionImmediate("hub", marker, "down")
+    Game.world:loadMap("hub", marker, "down")
     Kristal.saveGame(nil, Game:save("save_spawn"))
     Game.world:spawnObject(ScreenFade({1,1,1}, 1, 0, 1), 2100)
     if num == 4 and not Game:getFlag("p5_unlocked", false) then

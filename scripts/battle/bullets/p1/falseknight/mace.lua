@@ -2,7 +2,7 @@ local Mace, super = Class("nailbase")
 
 function Mace:init(x, y, dir, length)
     super:init(self, x, y)
-    self.enemy = Game.battle:getEnemyByID("p1/falseknight")
+    self.enemy = Game.battle:getEnemyBattler("p1/falseknight")
     self.hit_sfx = "bosses/false_knight_damage"
     self.hit_volume = 0.8
 

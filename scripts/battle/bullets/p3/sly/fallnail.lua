@@ -13,7 +13,7 @@ function Nail:init(x, y)
         fade_to = 1,
         fade = 0.1,
     }
-    self.enemy = Game.battle:getEnemyByID("p3/sly")
+    self.enemy = Game.battle:getEnemyBattler("p3/sly")
 
     self.spin_hb = CircleCollider(self, self.width/2, self.height/2, 22)
     self.spin_hb.collidable = false

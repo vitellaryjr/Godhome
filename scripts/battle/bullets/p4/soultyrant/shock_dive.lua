@@ -3,7 +3,7 @@ local Dive, super = Class("nailbase")
 function Dive:init(x, y, fake, fast)
     super:init(self, x, y, "battle/p1/soulwarrior/dive")
     self.sprite:play(0.1, true)
-    self.enemy = Game.battle:getEnemyByID("p4/soultyrant")
+    self.enemy = Game.battle:getEnemyBattler("p4/soultyrant")
     self.physics = {
         speed_y = -4,
         friction = 0.5,

@@ -3,7 +3,7 @@ local Ball, super = Class("nailbase")
 function Ball:init(x, y)
     super:init(self, x, y, "battle/p2/marmu/ballin")
     self.collider = CircleCollider(self, self.width/2 + 1, self.height/2, 12)
-    self.enemy = Game.battle:getEnemyByID("p2/marmu")
+    self.enemy = Game.battle:getEnemyBattler("p2/marmu")
 
     self.sprite:setRotationOrigin(0.5, 0.5)
 

@@ -35,5 +35,5 @@ return function(cutscene, door, knight, dir)
     Game.world:loadMap("p"..door.pantheon)
     Game:setFlag("in_pantheon", true)
     Game:setFlag("pantheon_num", door.pantheon)
-    Game:setFlag("pantheon_start_time", love.timer.getTime())
+    Game:setFlag("pantheon_start_time", Kristal.getTime())
 end

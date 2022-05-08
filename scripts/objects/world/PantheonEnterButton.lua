@@ -4,7 +4,7 @@ function Button:init(x, y, text)
     super:init(self, x, y)
 
     self.name = text
-    self.text = Text("[style:menu]"..self.name, 0, 0)
+    self.text = Text(self.name, 0, 0, 200, 200, {style = "menu"})
     local text_obj = love.graphics.newText(self.text:getFont(), self.name)
     self.text.x = -Utils.round(text_obj:getWidth()/2)
     self.text.layer = 1

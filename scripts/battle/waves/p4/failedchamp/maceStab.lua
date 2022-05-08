@@ -37,7 +37,7 @@ function Stab:onStart()
         end)
     end)
     self.timer:every(1.2, function()
-        Game.battle.encounter:spawnRocks(self, Game.battle:getEnemyByID("p4/failedchamp").phase, 0.2)
+        Game.battle.encounter:spawnRocks(self, Game.battle:getEnemyBattler("p4/failedchamp").phase, 0.2)
     end)
 end
 

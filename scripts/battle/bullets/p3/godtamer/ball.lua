@@ -6,7 +6,7 @@ function Ball:init(x, y, dir, grav_dir)
     self.collider = CircleCollider(self, self.width/2, self.height/2, 15)
     self.wall_collider = CircleCollider(self, self.width/2, self.height/2, 17)
 
-    self.enemy = Game.battle:getEnemyByID("p3/beast")
+    self.enemy = Game.battle:getEnemyBattler("p3/beast")
 
     if Utils.sign(math.cos(dir)) * Utils.sign(math.sin(grav_dir)) == -1 then
         self.scale_x = -2

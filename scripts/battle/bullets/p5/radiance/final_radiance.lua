@@ -7,7 +7,7 @@ function Radiance:init(x, y)
     self.layer = BATTLE_LAYERS["above_arena"] + 50
     self.nail_hb = CircleCollider(self, self.width/2, 33, 12)
     self.collider.collidable = false
-    self.enemy = Game.battle:getEnemyByID("p5/radiance")
+    self.enemy = Game.battle:getEnemyBattler("p5/radiance")
     self.sprite:setScaleOrigin(0.5, 0.5)
     self.sprite.scale_x = 0
 

@@ -271,7 +271,7 @@ function Mod:loadHooks()
     Utils.hook(Battle, "update", function(orig, battle)
         orig(battle)
         if battle.encounter.darkness then
-            local player = battle:getPartyByID("knight")
+            local player = battle:getPartyBattler("knight")
             if player then
                 if not self.light_indexes.player then
                     addLight("player", player.x, player.y - 40, 64)
@@ -328,6 +328,16 @@ function Mod:loadHooks()
         if ui.override_y then
             ui.y = ui.override_y
         end
+    end)
+
+    -- tutorial for healing
+    Utils.hook(EnemyBattler, "getNextWaves", function(orig, battler, ...)
+        local knight = Game.battle:getPartyBattler("knight")
+        if knight.chara.health < knight.chara.stats.health and not Game:getFlag("taught_healing") then
+            Game:setFlag("taught_healing", true)
+            Game.battle:infoText("* Press "..Input.getText("cancel").." while at 16% TP to heal!")
+        end
+        return orig(battler, ...)
     end)
 
     -- lifeblood code (extra health)
@@ -397,7 +407,7 @@ function Mod:loadHooks()
         end
     end)
     Utils.hook(Bullet, "onDamage", function(orig, bullet, soul)
-        local knight = Game.battle:getPartyByID("knight")
+        local knight = Game.battle:getPartyBattler("knight")
         if knight.chara.lifeblood > 0 then
             local direction
             if bullet.physics then
@@ -498,7 +508,7 @@ function Mod:loadHooks()
                 game.lock_input = false
                 local num = game:getFlag("pantheon_num", 1)
                 local room = num == 5 and "peak" or "hub"
-                game.world:transitionImmediate(room, "p"..num.."_exit")
+                game.world:loadMap(room, "p"..num.."_exit")
                 local knight = game:getPartyMember("knight")
                 knight.health = knight.stats.health
                 game.exiting_encounter = nil

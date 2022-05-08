@@ -13,10 +13,10 @@ function Hall:loadObject(name, data)
             shrink = {0.01,0.05},
             shrink_after = {2,4},
             amount = {2,3},
-            every = {2,3},
+            every = 2,
         })
         Game.world:addChild(ps)
-        return ps
+        return nil
     end
     return super:loadObject(self, name, data)
 end

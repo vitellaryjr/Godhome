@@ -17,7 +17,7 @@ function Spikes:onStart()
             if math.abs(x - arena.x) < arena.width/2 + 8 then
                 local enemy
                 if i == c then
-                    enemy = Game.battle:getEnemyByID("p3/grimm")
+                    enemy = Game.battle:getEnemyBattler("p3/grimm")
                 end
                 self:spawnBulletTo(Game.battle.mask, "p3/grimm/spike", x, arena.bottom, enemy)
             end

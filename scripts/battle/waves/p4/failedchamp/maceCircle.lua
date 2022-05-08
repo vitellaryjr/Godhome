@@ -14,7 +14,7 @@ function Circle:onStart()
     local arena = Game.battle.arena
     self.mace = self:spawnBullet("p4/failedchamp/mace", arena.x, arena.y, 3*math.pi/2, 64)
     self.timer:every(1.5, function()
-        Game.battle.encounter:spawnRocks(self, Game.battle:getEnemyByID("p4/failedchamp").phase, 0.2)
+        Game.battle.encounter:spawnRocks(self, Game.battle:getEnemyBattler("p4/failedchamp").phase, 0.2)
     end)
 end
 

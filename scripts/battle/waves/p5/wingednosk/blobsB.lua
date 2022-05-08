@@ -22,7 +22,7 @@ function Blobs:onStart()
             blob.tp = 0.8
         end
     end)
-    local nosk = Game.battle:getEnemyByID("p5/wingednosk")
+    local nosk = Game.battle:getEnemyBattler("p5/wingednosk")
     if nosk.health / nosk.max_health < 0.5 then
         self.timer:every(2, function()
             local angle, dist = Utils.random(math.pi*2), love.math.random(50, 75)

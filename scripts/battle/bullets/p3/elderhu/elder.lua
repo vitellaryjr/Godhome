@@ -5,7 +5,7 @@ function Elder:init(x, y)
     self.sprite:play(0.4, true)
     self:setHitbox(11,4,8,18)
 
-    self.enemy = Game.battle:getEnemyByID("p3/elderhu")
+    self.enemy = Game.battle:getEnemyBattler("p3/elderhu")
     self.knockback = 4
 
     self.sine = 0

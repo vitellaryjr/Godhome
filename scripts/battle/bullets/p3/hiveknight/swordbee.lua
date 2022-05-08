@@ -4,7 +4,7 @@ function Bee:init(x, y, dir)
     super:init(self, x, y, "battle/p3/hiveknight/sword_bee")
     self.sprite:play(0.2, true)
     self.collider = CircleCollider(self, 13, 10, 4)
-    self.enemy = Game.battle:getEnemyByID("p3/hiveknight")
+    self.enemy = Game.battle:getEnemyBattler("p3/hiveknight")
 
     self.rotation = dir
 end

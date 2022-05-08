@@ -3,7 +3,7 @@ local Dung, super = Class("nailbase")
 function Dung:init(x, y, dir)
     super:init(self, x, y, "battle/p1/dungdefender/defenderball")
     self.collider = CircleCollider(self, self.width/2, self.height/2, 10)
-    self.enemy = Game.battle:getEnemyByID("p1/dungdefender")
+    self.enemy = Game.battle:getEnemyBattler("p1/dungdefender")
 
     self.rotation = Utils.random(2*math.pi)
     self.graphics.spin = Utils.random(0.1,0.2)*Utils.sign(math.cos(dir))

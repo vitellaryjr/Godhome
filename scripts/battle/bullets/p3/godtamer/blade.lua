@@ -27,7 +27,7 @@ end
 
 function Blade:launchHit(battler)
     super:launchHit(self, battler)
-    if battler == Game.battle:getEnemyByID("p3/beast") and battler.health < 0 then
+    if battler == Game.battle:getEnemyBattler("p3/beast") and battler.health < 0 then
         self.wave.finished = true
         battler:onDefeat()
     end

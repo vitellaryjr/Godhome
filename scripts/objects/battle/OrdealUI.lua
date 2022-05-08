@@ -8,7 +8,7 @@ function UI:init()
     self.head:setOrigin(0.5, 0.5)
     self:addChild(self.head)
 
-    self.count = Text("0", 30, -11)
+    self.count = Text("0", 30, -11, 100, 100, {style = "menu"})
     self:addChild(self.count)
 end
 

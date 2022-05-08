@@ -4,7 +4,7 @@ function Slam:init(x, y)
     super:init(self, x, y, "battle/p1/gruzmother/charge")
     self.sprite:play(0.1, true)
     self.nail_hb = Hitbox(self, 1,5, 22,20)
-    self.enemy = Game.battle:getEnemyByID("p1/gruzmother")
+    self.enemy = Game.battle:getEnemyBattler("p1/gruzmother")
 
     local arena = Game.battle.arena
     local soul = Game.battle.soul

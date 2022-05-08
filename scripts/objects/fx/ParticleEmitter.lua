@@ -177,16 +177,16 @@ end
 
 function Emitter:onAdd(parent)
     super:onAdd(self, parent)
-    if self:getValue("every") > 0 then
+    local every = self:getValue("every")
+    if every > 0 then
         local total_time = 0
         self.timer:script(function(wait)
             while true do
                 if self:getStage() and self.data.auto and self.parent.visible then
                     self:emit()
                 end
-                local t = self:getValue("every")
-                total_time = total_time + t
-                wait(t)
+                total_time = total_time + every
+                wait(every)
                 local time = self:getValue("time")
                 if time > 0 and total_time >= time then break end
             end

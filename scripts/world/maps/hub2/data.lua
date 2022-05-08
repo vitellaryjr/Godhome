@@ -306,7 +306,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["scene"] = "doorcheck.lifeblood"
+            ["cutscene"] = "doorcheck.lifeblood"
           }
         }
       }

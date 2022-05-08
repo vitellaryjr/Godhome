@@ -1,6 +1,6 @@
 return function(cutscene, skip)
     local en = Game.battle.encounter
-    local nosk = Game.battle:getEnemyByID("p5/wingednosk")
+    local nosk = Game.battle:getEnemyBattler("p5/wingednosk")
     if skip then
         en:stopMusic()
         cutscene:wait(0.35)

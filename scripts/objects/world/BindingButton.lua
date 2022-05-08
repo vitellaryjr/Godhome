@@ -17,7 +17,7 @@ function Button:init(x, y, name)
     elseif name == "magic" then
         self.title = "Magic"
     end
-    self.title_text = Text("[style:menu]"..self.title, 60, 0)
+    self.title_text = Text(self.title, 60, 0, 200, 200, {style = "menu"})
     self:addChild(self.title_text)
 
     self.soul = Sprite("player/heart_menu", -2, 8)

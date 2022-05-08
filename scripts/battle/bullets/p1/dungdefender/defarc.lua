@@ -5,7 +5,7 @@ function Defender:init(x, y)
     self.rotation = Utils.random(2*math.pi)
     self.graphics.spin = 0.3
     self.collider = CircleCollider(self, self.width/2, self.height/2, 10)
-    self.enemy = Game.battle:getEnemyByID("p1/dungdefender")
+    self.enemy = Game.battle:getEnemyBattler("p1/dungdefender")
     self.physics = {
         speed_y = -16,
         gravity = 1.2,

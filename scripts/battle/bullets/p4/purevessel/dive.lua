@@ -2,7 +2,7 @@ local Dive, super = Class("nailbase")
 
 function Dive:init(x, y)
     super:init(self, x, y, "battle/p4/purevessel/shade_teleport")
-    self.enemy = Game.battle:getEnemyByID("p4/purevessel")
+    self.enemy = Game.battle:getEnemyBattler("p4/purevessel")
     self.enemy_tp = 0
     self:ball()
 end

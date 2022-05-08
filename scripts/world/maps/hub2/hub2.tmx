@@ -71,7 +71,7 @@
   </object>
   <object id="17" name="script" x="280" y="200" width="40" height="160">
    <properties>
-    <property name="scene" value="doorcheck.lifeblood"/>
+    <property name="cutscene" value="doorcheck.lifeblood"/>
    </properties>
   </object>
  </objectgroup>

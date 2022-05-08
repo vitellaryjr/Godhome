@@ -35,7 +35,7 @@ function Birth:onStart()
             wait()
         end
         wait(1)
-        local gruz = Game.battle:getEnemyByID("p1/gruzmother")
+        local gruz = Game.battle:getEnemyBattler("p1/gruzmother")
         gruz.final_done = true
         gruz:onDefeat()
         self.finished = true

@@ -21,7 +21,7 @@ end
 function Dung:onDialogueEnd()
     if self.rushing then
         Game.battle.shake = 6
-        local defender = Game.battle:getEnemyByID("p1/dungdefender")
+        local defender = Game.battle:getEnemyBattler("p1/dungdefender")
         defender:setAnimation("fury")
         Assets.playSound("bosses/dung_defender_roar", 0.8)
         Assets.playSound("bosses/dung_defender_chest_beat", 0.8)

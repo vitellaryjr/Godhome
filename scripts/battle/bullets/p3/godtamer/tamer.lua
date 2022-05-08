@@ -9,7 +9,7 @@ function Tamer:init(x, tx, time)
     })
     
     self.knockback = 6
-    self.enemy = Game.battle:getEnemyByID("p3/godtamer")
+    self.enemy = Game.battle:getEnemyBattler("p3/godtamer")
 
     self.physics = {
         speed_x = (tx-x)/(time*30),

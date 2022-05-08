@@ -35,7 +35,7 @@ function Blobs:onStart()
             end)
         end
     end)
-    local nosk = Game.battle:getEnemyByID("p5/wingednosk")
+    local nosk = Game.battle:getEnemyBattler("p5/wingednosk")
     if nosk.health / nosk.max_health < 0.5 then
         local soul = Game.battle.soul
         self.timer:every(2, function()

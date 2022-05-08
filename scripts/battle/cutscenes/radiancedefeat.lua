@@ -1,7 +1,7 @@
 return {
     ["true"] = function(cutscene)
         local en = Game.battle.encounter
-        local radiance = Game.battle:getEnemyByID("p5/radiance")
+        local radiance = Game.battle:getEnemyBattler("p5/radiance")
         Game.battle.timer:tween(0.5, radiance, {x = 440, y = 290}, "out-quad")
         cutscene:wait(2)
         local rad_center = {x = radiance.x + 4, y = radiance.y - radiance.height - 20}
@@ -299,7 +299,7 @@ return {
     end,
     ["false"] = function(cutscene)
         local en = Game.battle.encounter
-        local radiance = Game.battle:getEnemyByID("p5/radiance")
+        local radiance = Game.battle:getEnemyBattler("p5/radiance")
         Game.battle.timer:tween(0.5, radiance, {x = 440, y = 290}, "out-quad")
         cutscene:wait(2)
         local rad_center = {x = radiance.x + 4, y = radiance.y - radiance.height - 20}

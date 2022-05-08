@@ -3,7 +3,7 @@ local Nail, super = Class("nailbase")
 function Nail:init(x, y)
     super:init(self, x, y, "battle/p1/nailmasters/nail")
     self.graphics.spin = 0.4
-    self.enemy = Game.battle:getEnemyByID("p3/sly")
+    self.enemy = Game.battle:getEnemyBattler("p3/sly")
 
     self.spin_hb = CircleCollider(self, self.width/2, self.height/2, 22)
     self.spin_hb.collidable = false

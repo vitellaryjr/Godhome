@@ -13,11 +13,11 @@ function Menu:init(statue)
     self:addChild(self.box)
 
     self.title, self.description = statue:getText()
-    self.title_text = Text("[style:menu]"..self.title, 166, 94)
+    self.title_text = Text(self.title, 166, 94, 300, 200, {style = "menu"})
     self.title_text.layer = 1
     self:addChild(self.title_text)
 
-    self.description_text = Text("[style:menu]"..self.description, 166, 130)
+    self.description_text = Text(self.description, 166, 130, 300, 200, {style = "menu"})
     self.description_text:setScale(0.5)
     self.description_text.layer = 1
     self:addChild(self.description_text)
@@ -33,7 +33,7 @@ function Menu:init(statue)
         self:addChild(button.sprite)
 
         button.name = Utils.titleCase(button.type)
-        button.text = Text("[style:menu]"..button.name, button.x + 64, button.y)
+        button.text = Text(button.name, button.x + 64, button.y, 200, 200, {style = "menu"})
         button.text.layer = 1
         self:addChild(button.text)
 

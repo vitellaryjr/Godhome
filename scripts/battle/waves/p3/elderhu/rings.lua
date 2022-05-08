@@ -12,7 +12,7 @@ function Rings:onStart()
     self:spawnBullet("p3/elderhu/elder", arena.x, arena.top + 20)
     local columns = {}
     for i=1,5 do table.insert(columns, i) end
-    local elder = Game.battle:getEnemyByID("p3/elderhu")
+    local elder = Game.battle:getEnemyBattler("p3/elderhu")
     local time = Utils.clampMap(elder.health, 0,elder.max_health, 0.6,1)
     self.timer:everyInstant(time, function()
         local player_column = Utils.round(soul.x - arena.left-20, 40)/40 + 1

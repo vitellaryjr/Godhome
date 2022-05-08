@@ -5,7 +5,7 @@ function Fall:init(x, y, amt)
     self.sprite:play(0.1, true)
     self:setHitbox(9, 8, 16, 6)
     
-    self.enemy = Game.battle:getEnemyByID("p3/greyprince")
+    self.enemy = Game.battle:getEnemyBattler("p3/greyprince")
 
     self.physics = {
         speed_y = 0,

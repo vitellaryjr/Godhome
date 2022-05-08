@@ -5,7 +5,7 @@ function Markoth:init(x, y)
     self.sprite:play(0.2, true)
     self:setHitbox(1,11,14,20)
 
-    self.enemy = Game.battle:getEnemyByID("p4/markoth")
+    self.enemy = Game.battle:getEnemyBattler("p4/markoth")
     self.knockback = 4
 
     self.ox = x

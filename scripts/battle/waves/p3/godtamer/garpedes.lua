@@ -21,7 +21,7 @@ function Garpedes:onStart()
         local x = arena.x + 36*c
         self:spawnBulletTo(Game.battle.mask, "p3/godtamer/garpede", x, arena:getTop() - 40, math.pi/2, 4, 4)
     end)
-    if Game.battle:getEnemyByID("p3/godtamer") then
+    if Game.battle:getEnemyBattler("p3/godtamer") then
         self.timer:after(1.1, function()
             if self.arena_change ~= "resize_h" then
                 self.timer:everyInstant(3, function()

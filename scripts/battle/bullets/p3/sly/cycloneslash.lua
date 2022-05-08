@@ -5,7 +5,7 @@ function Cyclone:init(x, y)
     self.rotation = math.pi/2
     self.sprite:play(0.1, true)
     self:setHitbox(4,6,12,48)
-    self.enemy = Game.battle:getEnemyByID("p3/sly")
+    self.enemy = Game.battle:getEnemyBattler("p3/sly")
 end
 
 function Cyclone:update()

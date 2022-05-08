@@ -1760,7 +1760,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["scene"] = "doorcheck.radiance"
+            ["cutscene"] = "doorcheck.radiance"
           }
         },
         {
@@ -1775,7 +1775,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["scene"] = "doorcheck.knight"
+            ["cutscene"] = "doorcheck.knight"
           }
         }
       }

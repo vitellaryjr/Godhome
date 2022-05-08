@@ -5,7 +5,7 @@ function NoEyes:init()
     self.sprite:play(0.4, true)
     self:setHitbox(11, 11, 9, 11)
 
-    self.enemy = Game.battle:getEnemyByID("p4/noeyes")
+    self.enemy = Game.battle:getEnemyBattler("p4/noeyes")
 
     self.center_collider = PointCollider(self, 15, 18)
     self.sine = Utils.random(math.pi*3)

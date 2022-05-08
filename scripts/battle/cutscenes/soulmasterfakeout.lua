@@ -4,7 +4,7 @@ return function(cutscene)
     cutscene:wait(3)
     cutscene:wait(cutscene:shakeCamera(6))
     en:playMusic("pantheon_c")
-    local master = Game.battle:getEnemyByID("p2/soulmaster") or Game.battle:getEnemyByID("p4/soultyrant")
+    local master = Game.battle:getEnemyBattler("p2/soulmaster") or Game.battle:getEnemyBattler("p4/soultyrant")
     master:removeFX("fadeout")
     master:removeFX("dream_disappear")
     master.overlay_sprite.alpha = 1

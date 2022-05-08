@@ -5,7 +5,7 @@ function Xero:init(x, y)
     self.sprite:play(0.4, true)
     self:setHitbox(12,5,4,22)
 
-    self.enemy = Game.battle:getEnemyByID("p2/xero")
+    self.enemy = Game.battle:getEnemyBattler("p2/xero")
     self.knockback = 3
 
     self.sine = 0

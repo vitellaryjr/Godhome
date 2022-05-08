@@ -4,7 +4,7 @@ function Dash:init(x, y)
     super:init(self, x, y, "battle/p3/grimm/dash")
     self:setHitbox(6, 3, 27, 7)
     self.rotation = math.pi/2
-    self.enemy = Game.battle:getEnemyByID("p3/grimm")
+    self.enemy = Game.battle:getEnemyBattler("p3/grimm")
 end
 
 function Dash:onAdd(parent)

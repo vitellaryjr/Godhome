@@ -74,7 +74,7 @@ function NailBullet:hit(source, damage) -- source can be any object
     end
     Assets.playSound(self.hit_sfx, self.hit_volume)
 
-    local player = Game.battle:getPartyByID("knight")
+    local player = Game.battle:getPartyBattler("knight")
     damage = damage or self:getPlayerDamage(player.chara)
     self:hurt(damage, player)
 end

@@ -21,7 +21,7 @@ function TraitorLord:onBattleStart()
         Game.battle:addChild(TraitorClub())
     end
 
-    local lord = Game.battle:getEnemyByID("p4/traitorlord")
+    local lord = Game.battle:getEnemyBattler("p4/traitorlord")
     lord:addChild(ParticleEmitter(lord.width/2, lord.height/2, {
         layer = "below_battlers",
         color = {1, 0.6, 0.2},

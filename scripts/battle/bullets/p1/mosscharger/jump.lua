@@ -8,7 +8,7 @@ function Jump:init(x, y, dir_x, dir_y)
     self.sprite:play(0.15, true)
     self.physics.speed_x = dir_x*9
 
-    self.enemy = Game.battle:getEnemyByID("p1/mosscharger")
+    self.enemy = Game.battle:getEnemyBattler("p1/mosscharger")
 
     self.dir_x = dir_x
     self.dir_y = dir_y

@@ -25,7 +25,7 @@ end
 function BossEncounter:onBattleStart()
     super:onBattleStart(self)
     if Game:getFlag("bindings", {}).hp then
-        local player = Game.battle:getPartyByID("knight").chara
+        local player = Game.battle:getPartyBattler("knight").chara
         player.health = math.min(player.health, 40)
     end
     if not Game:getFlag("in_pantheon") then

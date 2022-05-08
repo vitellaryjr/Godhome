@@ -17,7 +17,7 @@ function Spirits:onStart()
     end
     Game.battle.encounter.singing:fade(0.5, 1)
     self.noeyes = self:spawnBullet("p4/noeyes/noeyes")
-    local enemy = Game.battle:getEnemyByID("p4/noeyes")
+    local enemy = Game.battle:getEnemyBattler("p4/noeyes")
     local dir = Utils.randomSign()
     self.timer:script(function(wait)
         while true do

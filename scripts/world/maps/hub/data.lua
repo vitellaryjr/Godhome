@@ -734,7 +734,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["scene"] = "doorcheck.p4"
+            ["cutscene"] = "doorcheck.p4"
           }
         }
       }

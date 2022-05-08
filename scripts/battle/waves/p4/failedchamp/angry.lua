@@ -9,7 +9,7 @@ end
 function Angry:onStart()
     self.timer:every(0.8, function()
         Game.battle.shake = 2
-        Game.battle.encounter:spawnRocks(self, 2 + Game.battle:getEnemyByID("p4/failedchamp").phase)
+        Game.battle.encounter:spawnRocks(self, 2 + Game.battle:getEnemyBattler("p4/failedchamp").phase)
     end)
 end
 

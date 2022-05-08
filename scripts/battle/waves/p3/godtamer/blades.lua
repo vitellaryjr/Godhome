@@ -14,7 +14,7 @@ function Blades:onStart()
         local blade = self:spawnBulletTo(Game.battle.mask, "p3/godtamer/blade", arena.x + love.math.random(-20,20), arena.top - 16)
         self.timer:after(0.1, function() blade:setParent(Game.battle) end)
     end)
-    if Game.battle:getEnemyByID("p3/godtamer") then
+    if Game.battle:getEnemyBattler("p3/godtamer") then
         local soul = Game.battle.soul
         self.timer:every(3, function()
             local time = Utils.clampMap(soul.y, arena.top, arena.bottom, 1.5, 2.3)

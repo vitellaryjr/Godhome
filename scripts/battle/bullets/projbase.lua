@@ -12,7 +12,7 @@ function Projectile:update()
     super:update(self)
     if self.launched then
         if self:collidesWith(Game.battle.encounter.player_proj_hb) then
-            self:launchHit(Game.battle:getPartyByID("knight"))
+            self:launchHit(Game.battle:getPartyBattler("knight"))
         end
         for _,enemy in ipairs(Game.battle.enemies) do
             if self:collidesWith(enemy.proj_hb) then
@@ -33,7 +33,7 @@ function Projectile:launchHit(battler)
     if battler:includes(PartyBattler) then
         battler:hurt(self:getDamage())
     elseif battler:includes(EnemyBattler) then
-        local player = Game.battle:getPartyByID("knight")
+        local player = Game.battle:getPartyBattler("knight")
         local amount = self:getPlayerDamage(player.chara, battler)
         if battler.onNailHurt then
             battler:onNailHurt(amount, player)

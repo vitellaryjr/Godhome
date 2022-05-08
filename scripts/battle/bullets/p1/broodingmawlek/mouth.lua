@@ -8,7 +8,7 @@ function Mouth:init(x, y)
 
     self.layer = BATTLE_LAYERS["arena"]+1
 
-    self.enemy = Game.battle:getEnemyByID("p1/broodingmawlek")
+    self.enemy = Game.battle:getEnemyBattler("p1/broodingmawlek")
 end
 
 return Mouth

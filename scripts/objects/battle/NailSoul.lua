@@ -78,7 +78,7 @@ function Nail:update()
         self.focus_mask.amount = Utils.clampMap(self.focus_used, 0,16, 0,0.6)
 
         if self.focus_used == 16 then
-            local player = Game.battle:getPartyByID("knight")
+            local player = Game.battle:getPartyBattler("knight")
             player:heal(player.chara:getStat("magic")*2)
             self.focus_cooldown = 0.5
         end
@@ -212,7 +212,7 @@ function Nail:hasEffect(name)
     if Game.battle.encounter.spells[name] then
         return true
     else
-        local player = Game.battle:getPartyByID("knight")
+        local player = Game.battle:getPartyBattler("knight")
         if "armors/"..name == player.chara:getArmor(2).id then
             if name == "fury" then
                 return player.chara.health <= 15
