@@ -11,7 +11,6 @@ function VengeflyKing:init()
     self.background = false
     self.hide_world = true
 
-    self.tutorial = not Game:getFlag("TAUGHT_NAIL", false)
     self.seen_charge = false
 end
 

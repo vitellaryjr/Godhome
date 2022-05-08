@@ -49,6 +49,13 @@ function Boss:onDefeat(damage, battler)
 end
 
 function Boss:getNextWaves()
+    -- healing tutorial
+    local knight = Game.battle:getPartyBattler("knight")
+    if knight.chara.health < knight.chara.stats.health and not Game:getFlag("taught_healing", false) then
+        Game:setFlag("taught_healing", true)
+        Game.battle:infoText("* Press "..Input.getText("cancel").." while at 16% TP to heal!")
+    end
+
     local waves = Utils.filter(self.waves, function(v) return not self.seen_waves[v] end)
     if #waves > 0 then
         return waves

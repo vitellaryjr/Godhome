@@ -6,8 +6,8 @@
   "inventory": {
     "armors": ["armors/unn", "armors/steadybody", "armors/compass"]
   },
-  "version": "v1.1.2",
-  "engineVer": "v0.4.0",
+  "version": "v1.1.3",
+  "engineVer": "v0.5.1",
   
   "map": "hub"
 }

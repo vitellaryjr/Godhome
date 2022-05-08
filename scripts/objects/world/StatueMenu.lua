@@ -17,7 +17,7 @@ function Menu:init(statue)
     self.title_text.layer = 1
     self:addChild(self.title_text)
 
-    self.description_text = Text(self.description, 166, 130, 300, 200, {style = "menu"})
+    self.description_text = Text(self.description, 166, 130, 600, 200, {style = "menu"})
     self.description_text:setScale(0.5)
     self.description_text.layer = 1
     self:addChild(self.description_text)

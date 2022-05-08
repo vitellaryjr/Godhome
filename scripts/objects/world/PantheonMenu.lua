@@ -19,7 +19,7 @@ function Menu:init(pantheon_num)
     else
         self.pre_title = "PANTHEON OF THE"
     end
-    self.pre_title_text = Text(self.pre_title, 320, 70, 200, 200, {style = "menu"})
+    self.pre_title_text = Text(self.pre_title, 320, 70, 400, 200, {style = "menu"})
     local pre_title_text_obj = love.graphics.newText(self.pre_title_text:getFont(), self.pre_title)
     self.pre_title_text:setScale(0.5)
     self.pre_title_text.x = 320 - Utils.round(pre_title_text_obj:getWidth()/4)
@@ -37,7 +37,7 @@ function Menu:init(pantheon_num)
     elseif pantheon_num == 5 then
         self.title = "HALLOWNEST"
     end
-    self.title_text = Text(self.title, 320, 84, 200, 200, {style = "menu"})
+    self.title_text = Text(self.title, 320, 84, 400, 200, {style = "menu"})
     local title_text_obj = love.graphics.newText(self.title_text:getFont(), self.title)
     self.title_text.x = 320 - Utils.round(title_text_obj:getWidth()/2)
     self.title_text.layer = 1
@@ -54,14 +54,14 @@ function Menu:init(pantheon_num)
     elseif pantheon_num == 5 then
         self.description = "Seek the Kingdom's Forgotten Light"
     end
-    self.description_text = Text(self.description, 320, 120, 200, 200, {style = "menu"})
+    self.description_text = Text(self.description, 320, 120, 400, 200, {style = "menu"})
     local description_text_obj = love.graphics.newText(self.description_text:getFont(), self.description)
     self.description_text:setScale(0.5)
     self.description_text.x = 320 - Utils.round(description_text_obj:getWidth()/4)
     self.description_text.layer = 1
     self:addChild(self.description_text)
 
-    self.binding_text = Text("BINDINGS", 320, 140, 200, 200, {style = "menu"})
+    self.binding_text = Text("BINDINGS", 320, 140, 400, 200, {style = "menu"})
     local binding_text_obj = love.graphics.newText(self.binding_text:getFont(), "BINDINGS")
     self.binding_text.x = 320 - Utils.round(binding_text_obj:getWidth()/2)
     self.binding_text.layer = 1

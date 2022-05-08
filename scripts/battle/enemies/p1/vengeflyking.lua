@@ -22,10 +22,14 @@ function VengeflyKing:init()
 end
 
 function VengeflyKing:getNextWaves()
-    if Game.battle.encounter.tutorial then
-        Game.battle.encounter.tutorial = false
-        Game:setFlag("TAUGHT_NAIL", true)
-        Game.battle:infoText("* Press "..Input.getText("confirm").." to use your NAIL\nagainst orange enemies!")
+    if not Game:getFlag("taught_nail") or not Game:getFlag("taught_healing") then
+        if not Game:getFlag("taught_nail") then
+            Game:setFlag("taught_nail", true)
+            Game.battle:infoText("* Press "..Input.getText("confirm").." to use your NAIL\nagainst orange enemies!")
+        else
+            Game:setFlag("taught_healing", true)
+            Game.battle:infoText("* Press "..Input.getText("cancel").." while at 16% TP to heal!")
+        end
         return {"p1/vengeflyking/vengeflies_tutorial"}
     elseif not Game.battle.encounter.seen_charge then
         Game.battle.encounter.seen_charge = true

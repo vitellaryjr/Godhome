@@ -330,16 +330,6 @@ function Mod:loadHooks()
         end
     end)
 
-    -- tutorial for healing
-    Utils.hook(EnemyBattler, "getNextWaves", function(orig, battler, ...)
-        local knight = Game.battle:getPartyBattler("knight")
-        if knight.chara.health < knight.chara.stats.health and not Game:getFlag("taught_healing") then
-            Game:setFlag("taught_healing", true)
-            Game.battle:infoText("* Press "..Input.getText("cancel").." while at 16% TP to heal!")
-        end
-        return orig(battler, ...)
-    end)
-
     -- lifeblood code (extra health)
     Utils.hook(OverworldActionBox, "draw", function(orig, box)
         orig(box)
