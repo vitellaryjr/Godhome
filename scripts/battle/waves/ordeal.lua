@@ -116,8 +116,8 @@ function Ordeal:init()
     self.zotes_by_type = {}
 
     -- if you wanna skip ahead, change this number and uncomment the function after
-    self.kill_count = 320
-    self:calculateState()
+    self.kill_count = 0
+    -- self:calculateState()
 end
 
 function Ordeal:onStart()
