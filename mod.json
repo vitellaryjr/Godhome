@@ -7,7 +7,7 @@
     "armors": ["armors/unn", "armors/steadybody", "armors/compass"],
     "key": []
   },
-  "version": "v1.1.6",
+  "version": "v1.1.6.1",
   "engineVer": "v0.6.0",
   
   "map": "hub"
