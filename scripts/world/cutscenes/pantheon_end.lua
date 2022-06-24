@@ -71,6 +71,7 @@ return function(cutscene)
     cutscene:attachCameraImmediate()
     local marker = "p"..num.."_exit"
     Game.world:loadMap("hub", marker, "down")
+    game:setMaxTension(100)
     Kristal.saveGame(nil, Game:save("save_spawn"))
     Game.world:spawnObject(ScreenFade({1,1,1}, 1, 0, 1), 2100)
     if num == 4 and not Game:getFlag("p5_unlocked", false) then

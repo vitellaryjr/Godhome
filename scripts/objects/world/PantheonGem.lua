@@ -39,7 +39,7 @@ function Gem:init(pantheon, x, y, notches)
             if bindings.hp and bindings.nail and bindings.tp and bindings.magic then
                 path = path.."_glow"
             else
-                path = path.."active"
+                path = path.."_active"
             end
         end
         local bind = Sprite(path, bx, by)

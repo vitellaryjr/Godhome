@@ -11,12 +11,8 @@ return {
             return
         end
         cutscene:wait(1)
-        local mask = ColorMaskFX({0.2,0.6,1}, 0)
-        door:addFX(mask)
-        Game.world.timer:tween(2, mask, {amount = 1})
-        cutscene:wait(2)
+        cutscene:wait(door:disappear())
         cutscene:shakeCamera(4)
-        door:remove()
         Game:setFlag("lifeblood_door_open", true)
     end,
     p4 = function(cutscene)

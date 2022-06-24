@@ -6,7 +6,7 @@ function Savepoint:init(data)
     self.solid = true
 
     self:setOrigin(0.5, 0.5)
-    self:setSprite("world/event/savepoint", 1/6)
+    self:setSprite("world/events/savepoint", 1/6)
 
     self.lifeblood = 0
     if Game:getFlag("lifeblood_active", false) then

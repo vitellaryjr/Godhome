@@ -449,7 +449,7 @@ function Mod:loadHooks()
             game.battle.encounter.darkness = nil
         end
         game.state = "PANTHEON_GAMEOVER"
-        if game:getFlag("in_pantheon", false) then
+        if game:getFlag("in_pantheon") then
             game.battle:remove()
             game.world:remove()
             game.stage.timer:script(function(wait)
@@ -496,6 +496,7 @@ function Mod:loadHooks()
                 game.stage:addChild(game.world)
                 game.state = "OVERWORLD"
                 game.lock_input = false
+                game:setMaxTension(100)
                 local num = game:getFlag("pantheon_num", 1)
                 local room = num == 5 and "peak" or "hub"
                 game.world:loadMap(room, "p"..num.."_exit")
