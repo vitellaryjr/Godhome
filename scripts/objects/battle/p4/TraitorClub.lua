@@ -1,4 +1,4 @@
-local ClothClub, super = Class("battle/UIAttachment")
+local ClothClub, super = Class("UIAttachment")
 
 function ClothClub:init()
     super:init(self, 60)

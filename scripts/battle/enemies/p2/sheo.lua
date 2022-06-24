@@ -20,7 +20,7 @@ function Sheo:init()
         "* Sheo paints a picture of you, as a\nsymbol of respect.",
         "* Sheo is disappointed that he has to\nfight you.",
         "* The floor is covered in wet paint.",
-        "* Godseeker strikes a pose for Sheo\nto paint.",
+        "* Audience members strike poses for Sheo\nto paint.",
     }
 end
 

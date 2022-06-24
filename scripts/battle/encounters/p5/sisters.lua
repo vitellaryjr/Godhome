@@ -50,7 +50,7 @@ function MantisLords:getEncounterText()
         return text
     else
         return Utils.pick{
-            "* The Godseeker can't see what's\ngoing on, but assumes it's very\nimpressive.",
+            "* The audience can't see what's\ngoing on, but assumes it's very\nimpressive.",
             "* The sisters sharpen their lances\nwith their claws.",
             "* Mantis children watch their lords\nwith complete respect."
         }

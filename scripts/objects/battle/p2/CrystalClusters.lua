@@ -1,4 +1,4 @@
-local Crystals, super = Class("battle/UIAttachment")
+local Crystals, super = Class("UIAttachment")
 
 function Crystals:init()
     super:init(self, 150)

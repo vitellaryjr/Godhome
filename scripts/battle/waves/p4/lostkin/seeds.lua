@@ -9,7 +9,7 @@ function Seeds:onStart()
     local arena = Game.battle.arena
     self.timer:everyInstant(1.3, function()
         local x, y = love.math.random(arena.left+20, arena.right-20), love.math.random(arena.top+20, arena.bottom-20)
-        local exp = self:spawnBullet("p2/brokenvessel/explosion", x, y)
+        local exp = self:spawnObject(VesselExplosion(x, y))
         exp:setColor(1, 0.2, 0)
         self.timer:script(function(wait)
             for _=1,5 do

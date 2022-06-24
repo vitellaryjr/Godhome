@@ -6,6 +6,7 @@ return function(cutscene, door, knight, dir)
     cutscene:wait(function() return not menu.open end)
     if menu.quit then
         -- cutscene:wait(cutscene:panTo(knight, 0.5))
+        cutscene:wait(cutscene:attachCamera())
         cutscene:endCutscene()
         return
     end

@@ -8,7 +8,7 @@ function Mawlek:init(x, y, rot, alpha)
     self.alpha = alpha
 end
 
-local MawlekBodies, super = Class("battle/UIAttachment")
+local MawlekBodies, super = Class("UIAttachment")
 
 function MawlekBodies:init()
     super:init(self, 80)

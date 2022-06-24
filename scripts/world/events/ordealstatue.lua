@@ -18,7 +18,7 @@ function Statue:onInteract(knight, facing)
             cutscene:wait(1)
             local chara = knight:getPartyMember()
             chara.health = chara.stats.health
-            local wait = cutscene:startEncounter("ordeal", false, nil, false)
+            local wait = cutscene:startEncounter("ordeal", false, nil, {wait = false})
             fade:fadeOutAndRemove()
             cutscene:wait(wait)
         end)

@@ -4,10 +4,11 @@
   "subtitle": "Challenge the gods of Hallownest",
   "party": ["knight"],
   "inventory": {
-    "armors": ["armors/unn", "armors/steadybody", "armors/compass"]
+    "armors": ["armors/unn", "armors/steadybody", "armors/compass"],
+    "key": []
   },
-  "version": "v1.1.4",
-  "engineVer": "v0.5.1",
+  "version": "v1.1.6",
+  "engineVer": "v0.6.0",
   
   "map": "hub"
 }

@@ -62,10 +62,10 @@ function NailBullet:hit(source, damage) -- source can be any object
 
     if self.enemy then
         local tp = self.enemy_tp or self.enemy:getAttackTension(15)
-        Game.battle.tension_bar:giveTension(tp)
+        Game:giveTension(tp)
     elseif self.nail_tp > 0 then
         local tp = Game:getFlag("bindings", {}).magic and (self.nail_tp*0.25) or self.nail_tp
-        Game.battle.tension_bar:giveTension(tp)
+        Game:giveTension(tp)
     end
 
     if self.nail_flash then

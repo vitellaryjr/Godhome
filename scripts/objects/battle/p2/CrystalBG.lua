@@ -1,4 +1,4 @@
-local BG, super = Class("battle/BaseBG")
+local BG, super = Class("BaseBG")
 
 function BG:init()
     super:init(self, {0.04, 0.01, 0.04})

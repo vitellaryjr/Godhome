@@ -1,4 +1,4 @@
-local Nails, super = Class("battle/UIAttachment")
+local Nails, super = Class("UIAttachment")
 
 function Nails:init()
     super:init(self, 100)

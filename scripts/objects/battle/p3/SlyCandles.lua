@@ -1,4 +1,4 @@
-local Candles, super = Class("battle/UIAttachment")
+local Candles, super = Class("UIAttachment")
 
 function Candles:init(darkness)
     super:init(self, 40)

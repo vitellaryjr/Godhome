@@ -1,4 +1,4 @@
-local BG, super = Class("battle/BaseBG")
+local BG, super = Class("BaseBG")
 
 function BG:init(color, back_color, fill)
     super:init(self, fill)

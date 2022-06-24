@@ -68,7 +68,7 @@ function Nail:update()
 
     self.focus_cooldown = Utils.approach(self.focus_cooldown, 0, DT)
     local tpbar = Game.battle.tension_bar
-    local tp = tpbar:getTension()
+    local tp = Game:getTension()
     if  Game.battle.state == "DEFENDING" and self.can_focus and Input.down("cancel")
     and self.cooldown == 0 and self.focus_cooldown == 0 and tp >= 16 then
         local speed = self:hasEffect("quickfocus") and 0.8 or 0.5
@@ -84,10 +84,9 @@ function Nail:update()
         end
     elseif self.focus_used > 0 then
         if self.focus_used > 6 and Game.battle.state ~= "DEFENDINGEND" then
-            tpbar:removeTension(self.focus_used)
-        else
-            tpbar:setTensionPreview(0)
+            Game:removeTension(self.focus_used)
         end
+        tpbar:setTensionPreview(0)
         self.focus_ps.data.auto = false
         self.focus_ps:clear()
         self.focus_mask.amount = 0
@@ -149,7 +148,7 @@ function Nail:update()
 end
 
 function Nail:doMovement()
-    local tp = Game.battle.tension_bar:getTension()
+    local tp = Game:getTension()
     if self.can_focus and Input.down("cancel") and self.cooldown == 0 and self.focus_cooldown == 0 and tp >= 16 then
         self.speed = Utils.approach(self.speed, self:hasEffect("unn") and 2 or 0, 1*DTMULT)
     else
@@ -171,7 +170,7 @@ function Nail:onRemove(parent)
     if self.focus_used > 0 then
         Game.battle.tension_bar:setTensionPreview(0)
     end
-    super:onRemove(self)
+    super:onRemove(self, parent)
 end
 
 function Nail:draw()

@@ -35,7 +35,7 @@ function Curse:onAdd(parent)
             orb.y = Utils.lerp(oy, self.y, orb.lerp)
         end, function()
             orb:remove()
-            Game.battle.tension_bar:removeTension(0.8)
+            Game:removeTension(0.8)
         end)
     end)
 end

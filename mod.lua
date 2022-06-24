@@ -626,7 +626,7 @@ function Mod:pantheonTransition(fade)
             Game.battle.encounter.darkness:remove()
             Game.battle.encounter.darkness = nil
         end
-        tp = Game.battle.tension
+        tp = Game.tension
         music = Game.battle.encounter.pantheon_music
         music_source = Game.battle.encounter.pantheon_music_source
         Game:setFlag("current_tp", tp)
@@ -711,7 +711,7 @@ function Mod:pantheonTransition(fade)
                 Mod:stopPantheonMusic(to_stop)
                 Mod:startPantheonMusic(encounter)
             end)
-            Game.battle.tension = tp
+            Game.tension = tp
             if fade then
                 fade:fadeOutAndRemove(0.02)
             else

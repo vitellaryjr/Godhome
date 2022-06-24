@@ -1,4 +1,4 @@
-local Roots, super = Class("battle/UIAttachment")
+local Roots, super = Class("UIAttachment")
 
 function Roots:init()
     super:init(self, 150)

@@ -5,7 +5,7 @@ function SpawnZote:init(x, y)
     self.layer = BATTLE_LAYERS["below_soul"]
     self.graphics.spin = 0.2
     self.physics.speed_y = 8
-    self.collidable = false
+    self.collider.collidable = false
     self.wall_hb = Hitbox(self, 0,0, 12,12)
 end
 

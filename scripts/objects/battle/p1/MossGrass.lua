@@ -1,4 +1,4 @@
-local MossGrass, super = Class("battle/UIAttachment")
+local MossGrass, super = Class("UIAttachment")
 
 function MossGrass:init()
     super:init(self, 0, 0, 640, 540)

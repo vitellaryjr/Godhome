@@ -1,7 +1,6 @@
 return function(cutscene, statue, knight, dir)
     if dir ~= "up" then return end
     cutscene:walkTo(knight, statue.x + statue.width/2, statue.y + 90, 0.1, "up")
-    cutscene:panTo(statue.x + statue.width/2, statue.y + 50, 0.1)
     cutscene:wait(0.1)
     local menu
     if not statue.locked then
@@ -21,7 +20,7 @@ return function(cutscene, statue, knight, dir)
     local chara = knight:getPartyMember()
     chara.health = chara.stats.health
     local difficulty = menu.difficulty
-    local wait = cutscene:startEncounter(statue:getEncounter(difficulty), false, nil, false)
+    local wait = cutscene:startEncounter(statue:getEncounter(difficulty), false, nil, {wait = false})
     local encounter = Game.battle.encounter
     fade:fadeOutAndRemove()
     if difficulty == "attuned" then

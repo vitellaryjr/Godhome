@@ -1,4 +1,4 @@
-local Flowers, super = Class("battle/UIAttachment")
+local Flowers, super = Class("UIAttachment")
 
 function Flowers:init()
     super:init(self, 64)

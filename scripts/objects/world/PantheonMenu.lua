@@ -54,7 +54,7 @@ function Menu:init(pantheon_num)
     elseif pantheon_num == 5 then
         self.description = "Seek the Kingdom's Forgotten Light"
     end
-    self.description_text = Text(self.description, 320, 120, 400, 200, {style = "menu"})
+    self.description_text = Text(self.description, 320, 120, 500, 200, {style = "menu"})
     local description_text_obj = love.graphics.newText(self.description_text:getFont(), self.description)
     self.description_text:setScale(0.5)
     self.description_text.x = 320 - Utils.round(description_text_obj:getWidth()/4)
@@ -99,6 +99,7 @@ function Menu:update()
         end
     end
     super:update(self)
+    if self.quit then return end
     if Input.pressed("cancel") then
         self.open = false
         self.quit = true
@@ -150,14 +151,22 @@ function Menu:update()
                 self:remove()
             end)
         end
-    elseif Input.pressed("up") and self.hover_index > 1 then
+    elseif Input.pressed("up") then
         local prev_index = self.hover_index
-        self.hover_index = self.hover_index - 1
+        if self.hover_index == 1 then
+            self.hover_index = 5
+        else
+            self.hover_index = self.hover_index - 1
+        end
         self.buttons[prev_index]:toggleHover(false)
         self.buttons[self.hover_index]:toggleHover(true)
-    elseif Input.pressed("down") and self.hover_index < 5 then
+    elseif Input.pressed("down") then
         local prev_index = self.hover_index
-        self.hover_index = self.hover_index + 1
+        if self.hover_index == 5 then
+            self.hover_index = 1
+        else
+            self.hover_index = self.hover_index + 1
+        end
         self.buttons[prev_index]:toggleHover(false)
         self.buttons[self.hover_index]:toggleHover(true)
     end

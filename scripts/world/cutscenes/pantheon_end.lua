@@ -107,7 +107,7 @@ return function(cutscene)
             amount = 50,
         }))
         cutscene:wait(1)
-        cutscene:wait(cutscene:panTo("p4_exit", 1))
+        cutscene:wait(cutscene:attachCamera())
         Game:setFlag("p5_unlocked", true)
     end
 end

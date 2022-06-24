@@ -1,4 +1,4 @@
-local Graves, super = Class("battle/UIAttachment")
+local Graves, super = Class("UIAttachment")
 
 function Graves:init()
     super:init(self, 64)

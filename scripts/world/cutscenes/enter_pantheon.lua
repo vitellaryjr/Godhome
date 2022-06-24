@@ -1,12 +1,12 @@
 return function(cutscene, door, knight, dir)
     if dir ~= "up" then return end
     cutscene:walkTo(knight, door.x + 40, door.y + 150, 0.1, "up")
-    cutscene:panTo(door.x + 40, door.y + 110, 0.1)
     cutscene:wait(0.1)
     local menu = Game.world:spawnObject(PantheonMenu(door.pantheon), "ui")
     cutscene:wait(function() return not menu.open end)
     if menu.quit then
         cutscene:endCutscene()
+        return
     end
     local bindings = {}
     for _,binding in ipairs(menu.binding_buttons) do
