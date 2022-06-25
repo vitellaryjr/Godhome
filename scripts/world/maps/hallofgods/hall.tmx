@@ -454,11 +454,13 @@
   <object id="142" name="script" x="4960" y="1120" width="40" height="160">
    <properties>
     <property name="cutscene" value="doorcheck.radiance"/>
+    <property name="once" type="bool" value="false"/>
    </properties>
   </object>
   <object id="143" name="script" x="4960" y="1760" width="40" height="160">
    <properties>
     <property name="cutscene" value="doorcheck.knight"/>
+    <property name="once" type="bool" value="false"/>
    </properties>
   </object>
  </objectgroup>
