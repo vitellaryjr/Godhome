@@ -84,7 +84,7 @@ function Ooma:launchHit(battler)
         Game.battle:addChild(fx)
         fx:fadeOutAndRemove(0.1)
     elseif battler:includes(EnemyBattler) then
-        battler.health = battler.health - 100
+        battler.health = math.max(battler.health - 100, 10)
         battler.hurt_timer = 0.5
         battler.sprite.shake_x = 8
         battler:setAnimation("vulnerable")

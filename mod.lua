@@ -597,6 +597,10 @@ function Mod:save(data)
     end
 end
 
+function Mod:postInit(new_file)
+    Game:setMaxTension(100)
+end
+
 function Mod:getActionButtons(battler, buttons)
     return {"fight", "magic", "defend"}
 end
