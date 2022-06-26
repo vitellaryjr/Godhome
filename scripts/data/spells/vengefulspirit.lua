@@ -50,7 +50,12 @@ function VengefulSpirit:onCast(user, target)
         fireball:remove()
         Assets.playSound("player/enemy_damage", 0.7)
         target:flash()
-        target:hurt(user.chara:getStat("magic")*10 - target.defense*3, user)
+        local damage = user.chara:getStat("magic")*10 - target.defense*3
+        if damage > 0 then
+            target:hurt(damage, user)
+        else
+            target:statusMessage("msg", "miss")
+        end
     end)
 end
 

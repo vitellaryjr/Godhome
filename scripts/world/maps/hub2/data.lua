@@ -290,9 +290,7 @@ return {
           height = 120,
           rotation = 0,
           visible = true,
-          properties = {
-            ["flagcheck"] = "!lifeblood_door_open"
-          }
+          properties = {}
         },
         {
           id = 17,
